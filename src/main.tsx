@@ -1,15 +1,18 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import { CssBaseline, CssVarsProvider } from "@mui/joy";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter } from "react-router";
 import "./main.css";
 import App from "./router/app";
+import { theme } from "./theme/theme";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <CssVarsProvider defaultMode="light" theme={theme}>
+      <CssBaseline />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </CssVarsProvider>
   </StrictMode>
 );

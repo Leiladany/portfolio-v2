@@ -46,7 +46,7 @@ function AboutSection() {
 
             <Typography level="body-sm" textAlign="justify">
               I'm passionate about <strong>continuous learning</strong> and
-              always on the lookout for opportunities to <strong>grow</strong> —
+              always on the lookout for opportunities to <strong>grow</strong>
               both as a developer and as a person.
             </Typography>
 

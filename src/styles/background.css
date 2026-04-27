@@ -21,7 +21,6 @@
   .background-accent-left-top {
     top: 8rem;
     left: max(-16rem, calc((100vw - 80rem) / 2 - 18rem));
-
   }
 
   .background-accent-right-top {

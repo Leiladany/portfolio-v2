@@ -13,7 +13,7 @@ export function ToolboxPreviewSection() {
           <div className="max-w-xl">
             <p className="eyebrow mb-3">Toolbox preview</p>
             <h2 className="font-display text-charcoal text-3xl sm:text-5xl">
-              Tools I love working with
+              Tools I work with
             </h2>
           </div>
           <Link

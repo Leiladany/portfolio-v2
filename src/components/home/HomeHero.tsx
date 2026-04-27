@@ -18,20 +18,17 @@ export function HomeHero() {
           <p className="text-graphite font-display text-xl leading-tight italic sm:text-3xl">
             {profileInfo.title}
           </p>
-          <span className="border-blush bg-blush-soft text-rose-deep inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs">
-            <Sparkles className="h-4 w-4 shrink-0" />
-            <span className="font-light whitespace-nowrap">
-              Open to junior roles
+          {profileInfo.openToWork.value && (
+            <span className="border-blush bg-blush-soft text-rose-deep inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs">
+              <Sparkles className="h-4 w-4 shrink-0" />
+              <span className="font-light whitespace-nowrap">
+                {profileInfo.openToWork.badge}
+              </span>
             </span>
-          </span>
+          )}
         </div>
       }
-      description={
-        <>
-          I design and build soft, clear and user-friendly digital experiences -
-          with care for the small details that make products feel kind.
-        </>
-      }
+      description={profileInfo.intro}
       actions={
         <>
           <Link to="/projects" className="pill pill-primary">

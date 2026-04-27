@@ -6,17 +6,22 @@ export const profileInfo = {
   lastName: "Teixeira",
   title: "UX/UI & Frontend Developer",
   resumeHref: "/CV_LeilaTeixeira.pdf",
+
+  intro:
+    "I design and build clear, thoughtful digital experiences, focusing on usability, visual balance and the small details that make products feel right.",
+
   aboutParagraphs: [
-    "I'm a UX/UI-focused developer who enjoys creating intuitive, visually engaging digital experiences. I care about how things look, but even more about how they feel and work for the user, making interfaces that are clear, thoughtful and easy to use.",
+    "I'm a UX/UI-focused developer who enjoys turning ideas into intuitive and visually engaging interfaces. I care about creating experiences that are not only visually appealing, but also easy to understand and genuinely useful.",
 
-    "With a background in Web Design from the Lisbon School of Design, I developed a strong foundation in user experience, interface design and visual communication. I later expanded my technical skills through a Full-stack Web Development Bootcamp at Ironhack, where I worked with modern frontend technologies, APIs and databases.",
+    "I have a background in Web Design from the Lisbon School of Design, where I built a strong foundation in user experience, interface design and visual communication. I later completed a Full-stack Web Development Bootcamp at Ironhack, where I worked with modern frontend technologies, APIs and databases.",
 
-    "I use frontend development as a tool to bring my design ideas to life, focusing on clean, responsive and user-centered interfaces.",
+    "Frontend development is how I bring my design ideas to life. I focus on building responsive, structured and user-centered interfaces that feel consistent and easy to use.",
 
-    "I'm always learning, exploring new ideas and improving both my design thinking and technical skills.",
+    "I'm continuously learning and refining both my design thinking and technical skills, always looking for ways to improve the way I build and design products.",
 
-    "Let's build something meaningful together.",
+    "I'm currently looking for a junior opportunity where I can grow, contribute and keep building meaningful digital experiences.",
   ],
+
   socials: [
     {
       platform: "email",
@@ -34,4 +39,11 @@ export const profileInfo = {
       href: "https://github.com/Leiladany/",
     },
   ],
+
+  openToWork: {
+    value: true,
+    badge: "Open to junior roles",
+    banner:
+      "Currently looking for a junior UX/UI or frontend role, based in Lisbon or remote.",
+  },
 } satisfies Profile;

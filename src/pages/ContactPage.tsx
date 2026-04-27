@@ -11,7 +11,7 @@ export function ContactPage() {
           <>
             Let's build something
             <br />
-            <span className="text-rose">soft and friendly.</span>
+            <span className="text-rose">together.</span>
           </>
         }
         description={

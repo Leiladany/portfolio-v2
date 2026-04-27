@@ -5,45 +5,38 @@ const projectEntries = [
     id: "play-it-better-summer-school",
     title: "Play It Better: Summer School",
     summary:
-      "A project for children that aims to make learning English feel more approachable through a friendly and accessible interface.",
-    date: "2023",
+      "A website designed to present a children's summer school program in a clear, friendly and easy-to-understand way.",
+    date: "2024",
     images: [
       {
         src: "/projects/playitbetter.png",
         alt: "Landing page preview of Play It Better: Summer School.",
       },
     ],
-    stack: ["React", "JavaScript", "Material UI", "CSS", "EmailJS"],
-    keywords: [
-      "Education",
-      "Friendly UI",
-      "Accessible layout",
-      "Communication flows",
-    ],
+    stack: ["React", "JavaScript", "Material UI", "EmailJS"],
     facts: [
       { label: "Type", value: "Educational web project" },
       { label: "Focus", value: "Approachable interface for children" },
-      { label: "Stack", value: "React, Material UI, EmailJS" },
     ],
     story: {
       overview: [
-        "Play It Better is centered on making English learning feel more inviting and more enjoyable for children.",
-        "The visual direction supports that goal by keeping the interface light, readable, and approachable for a younger audience.",
+        "Play It Better is a website created to explain how a children's summer school works and help parents quickly find the information they need, including how to register.",
       ],
       problem: [
-        "Educational products for children can quickly become noisy or overcomplicated. When that happens, the interface gets in the way of learning instead of supporting it.",
+        "When it comes to children's activities, parents usually look for clarity and trust. If the information feels confusing or overwhelming, it becomes harder to make a decision.",
       ],
       goal: [
-        "The goal was to create a friendlier experience where the visual language encourages exploration and makes the product feel less intimidating.",
+        "The goal was to design a simple and welcoming experience where users can quickly understand the program and feel comfortable moving forward.",
       ],
       userFlow: [
-        "The experience is designed so users can land on the product, understand what it offers quickly, and move through the key information without confusion or unnecessary friction.",
+        "The structure guides users from a general understanding of the program into more specific details, ending with a clear path to registration.",
       ],
       designDecisions: [
-        "The layout uses bright, supportive visuals and straightforward structure so the interface feels accessible. React and Material UI helped keep the experience consistent while EmailJS covered communication needs without adding backend overhead.",
+        "The interface uses a light and friendly visual style, combined with a simple layout and clear hierarchy. The focus was on readability and making sure each section feels easy to scan.",
+        "On the development side, React and Material UI helped maintain consistency, while EmailJS allowed handling contact interactions without needing a backend.",
       ],
       learnings: [
-        "This project highlighted how much tone matters in education-focused interfaces. Small decisions around spacing, clarity, and visual warmth have a direct impact on whether the product feels welcoming.",
+        "This project helped reinforce how important tone and clarity are, especially for younger audiences. Small design choices can make a big difference in how approachable a product feels.",
       ],
     },
     links: {
@@ -56,7 +49,7 @@ const projectEntries = [
     id: "empowered",
     title: "Empowered",
     summary:
-      "An online platform dedicated to helping young people and adults explore topics related to sexuality, health, and relationships in a clear and approachable way.",
+      "An educational platform designed to present sensitive topics in a clear, approachable and structured way.",
     date: "2023",
     images: [
       {
@@ -64,45 +57,30 @@ const projectEntries = [
         alt: "Homepage preview of the Empowered platform.",
       },
     ],
-    stack: [
-      "React",
-      "JavaScript",
-      "Mantine",
-      "Node.js",
-      "Express.js",
-      "Axios",
-      "REST API",
-      "MongoDB",
-    ],
-    keywords: [
-      "Educational platform",
-      "Content design",
-      "Information architecture",
-      "Full-stack flow",
-    ],
+    stack: ["React", "JavaScript", "Mantine"],
     facts: [
       { label: "Type", value: "Educational platform" },
       { label: "Focus", value: "Content clarity and trust" },
-      { label: "Stack", value: "React, Mantine, Express, MongoDB" },
     ],
     story: {
       overview: [
-        "Empowered is an information-driven platform built around topics related to sexuality, health, and relationships, so clarity and trust are central to the experience.",
+        "Empowered is a platform focused on topics like sexuality, health and relationships, where the main goal is to make information feel accessible and easy to understand.",
       ],
       problem: [
-        "Sensitive subjects can feel overwhelming if the interface is too dense, too clinical, or too difficult to navigate. The challenge was to make the content feel approachable without reducing its importance.",
+        "Content around sensitive subjects can easily feel overwhelming, too technical, or uncomfortable to navigate. Without the right structure, users may disengage before finding what they need.",
       ],
       goal: [
-        "The goal was to create a platform where users can access educational content in a way that feels welcoming, readable, and organized.",
+        "The goal was to create a space where users feel comfortable exploring content, with a strong focus on clarity, readability and trust.",
       ],
       userFlow: [
-        "Users move through the platform by discovering key topics, opening deeper content, and continuing through the information architecture without feeling lost or overloaded.",
+        "Users can explore different topics, dive deeper into specific content, and move through the platform without feeling lost or overloaded.",
       ],
       designDecisions: [
-        "The design takes a content-first approach where layout, hierarchy, and spacing support comprehension. On the technical side, the frontend connects to APIs and a MongoDB-backed Express layer to support the broader platform flow.",
+        "The design follows a content-first approach, using spacing, hierarchy and simple layouts to support reading and understanding.",
+        "From a technical perspective, the project connects a React frontend with an Express and MongoDB backend, allowing content to be structured and delivered dynamically.",
       ],
       learnings: [
-        "This project reinforced how interface trust is built through structure and tone. Readability, pacing, and clear hierarchy matter even more when the subject matter is sensitive.",
+        "This project showed how important structure and tone are in building trust. Clear organization and calm visual design make a big difference when dealing with sensitive topics.",
       ],
     },
     links: {
@@ -115,7 +93,7 @@ const projectEntries = [
     id: "pawsitive-pets",
     title: "Pawsitive Pets",
     summary:
-      "A simple online agenda where users can organize and keep track of important information related to their pets.",
+      "A simple web app that helps users organize and manage important information about their pets.",
     date: "2023",
     images: [
       {
@@ -123,44 +101,30 @@ const projectEntries = [
         alt: "Dashboard preview of the Pawsitive Pets web app.",
       },
     ],
-    stack: [
-      "React",
-      "JavaScript",
-      "Bootstrap",
-      "Node.js",
-      "Express.js",
-      "REST API",
-      "MongoDB",
-    ],
-    keywords: [
-      "Pet management",
-      "CRUD flows",
-      "Clear organization",
-      "Full-stack app",
-    ],
+    stack: ["React", "JavaScript", "Bootstrap"],
     facts: [
       { label: "Type", value: "Pet agenda web app" },
       { label: "Focus", value: "Organization and data handling" },
-      { label: "Stack", value: "React, Express, MongoDB" },
     ],
     story: {
       overview: [
-        "Pawsitive Pets is built around keeping practical pet information easy to access, update, and organize in one place.",
+        "Pawsitive Pets is a small management tool where users can store and update key information related to their pets in one place.",
       ],
       problem: [
-        "Pet-related details are often scattered across messages, notes, and memory. That makes it harder to keep track of what matters and to update information reliably.",
+        "Pet information is often scattered across notes, messages or memory, which makes it harder to keep everything updated and accessible.",
       ],
       goal: [
-        "The goal was to create a simple management tool where users can centralize important pet data through a straightforward interface.",
+        "The goal was to create a straightforward and organized interface where users can easily manage and update their data.",
       ],
       userFlow: [
-        "The product flow focuses on managing records with predictable CRUD actions so users can quickly create, review, and update information without needing to relearn the interface.",
+        "The experience is based on simple and predictable actions: creating, viewing and editing information in a consistent way.",
       ],
       designDecisions: [
-        "The UI emphasizes clarity and repeatable patterns instead of visual complexity. The technical setup combines a React frontend with Express and MongoDB so the app can support a practical data-management flow.",
+        "The interface focuses on clarity and repetition of patterns, so users don't have to think too much about how to use it.",
+        "The app combines a React frontend with an Express and MongoDB backend to support full CRUD functionality.",
       ],
       learnings: [
-        "This project highlighted how valuable consistency is in utility products. When the interaction model is stable, the product feels easier to trust and easier to use.",
+        "This project reinforced how important consistency is in utility tools. When everything behaves as expected, the product becomes easier to use and trust.",
       ],
     },
     links: {
@@ -173,7 +137,7 @@ const projectEntries = [
     id: "escaping-westview",
     title: "Escaping Westview",
     summary:
-      "A 2D browser game inspired by the Disney+ series WandaVision, where the goal is to survive incoming spells for as long as possible.",
+      "A simple 2D browser game focused on movement, timing and player feedback.",
     date: "2022",
     images: [
       {
@@ -182,35 +146,28 @@ const projectEntries = [
       },
     ],
     stack: ["HTML", "CSS", "JavaScript", "Canvas"],
-    keywords: [
-      "2D gameplay",
-      "Canvas rendering",
-      "Interaction design",
-      "Timing mechanics",
-    ],
     facts: [
       { label: "Type", value: "2D browser game" },
       { label: "Focus", value: "Movement, timing, and feedback" },
-      { label: "Stack", value: "HTML, CSS, JavaScript, Canvas" },
     ],
     story: {
       overview: [
-        "Escaping Westview is a browser game with a simple core loop: keep moving, avoid danger, and survive for as long as possible.",
+        "Escaping Westview is a small browser game inspired by WandaVision, where the player must avoid obstacles and survive for as long as possible.",
       ],
       problem: [
-        "For a browser game to feel fun, the controls and feedback need to be immediate. Even a simple idea can fall flat if movement and visual response do not feel tight.",
+        "Even simple games can feel frustrating if controls or feedback aren't responsive enough. The experience depends heavily on how smooth and immediate interactions feel.",
       ],
       goal: [
-        "The goal was to create a small but engaging gameplay loop that feels responsive, replayable, and easy to understand from the first session.",
+        "The goal was to create a simple but engaging gameplay loop that feels responsive and easy to understand from the first try.",
       ],
       userFlow: [
-        "Players enter the game, understand the objective quickly, and then focus on movement and survival as the challenge increases through repeated attempts.",
+        "Players quickly understand the objective and jump into the action, with difficulty increasing naturally as they try to survive longer.",
       ],
       designDecisions: [
-        "Canvas and vanilla JavaScript were a strong fit because they give direct control over rendering, collision handling, and timing. The project keeps the mechanics readable so the gameplay stays at the center.",
+        "Using Canvas and vanilla JavaScript allowed full control over rendering and interactions, making it easier to fine-tune movement and collision behavior.",
       ],
       learnings: [
-        "This project reinforced how much interaction quality matters. Strong feedback and responsive movement can make a simple mechanic feel significantly more satisfying.",
+        "This project showed how much impact responsiveness and feedback have. Even a simple idea becomes much more engaging when interactions feel smooth and satisfying.",
       ],
     },
     links: {

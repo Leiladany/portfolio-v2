@@ -7,18 +7,18 @@ export function ProjectsPage() {
   return (
     <SiteLayout>
       <PageIntro
-        eyebrow="Case studies"
+        eyebrow="Projects"
         title={
           <>
-            Things I've designed
+            Designing and building
             <br />
-            and built.
+            <span className="text-rose">experiences.</span>
           </>
         }
         description={
           <>
-            A small set of student and personal projects - each one taught me
-            something about people, interfaces, or both.
+            A collection of student and personal projects focused on usability,
+            structure and real user needs.
           </>
         }
       />

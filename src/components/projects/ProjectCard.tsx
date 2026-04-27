@@ -39,7 +39,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         </div>
         <div className="mt-auto flex items-center justify-between pt-4">
           <span className="text-charcoal text-sm font-medium">
-            View case study
+            View project
           </span>
           <span className="bg-blush text-rose-deep flex h-10 w-10 items-center justify-center rounded-full">
             <AnimatedArrow className="h-4 w-4" />

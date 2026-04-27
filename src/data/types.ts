@@ -6,14 +6,22 @@ export type SocialLink = {
   href: string;
 };
 
+export type OpenToWorkStatus = {
+  value: boolean;
+  badge: string;
+  banner: string;
+};
+
 export type Profile = {
   fullName: string;
   firstName: string;
   lastName: string;
   title: string;
   resumeHref: string;
+  intro: string;
   aboutParagraphs: readonly string[];
   socials: readonly SocialLink[];
+  openToWork: OpenToWorkStatus;
 };
 
 export type SkillGroup = {
@@ -53,7 +61,6 @@ export type Project = {
   date: string;
   images: readonly [ProjectImage, ...ProjectImage[]];
   stack: readonly string[];
-  keywords: readonly string[];
   facts: readonly ProjectFact[];
   story: ProjectStory;
   links: ProjectLinks;

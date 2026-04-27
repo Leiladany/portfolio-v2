@@ -7,10 +7,7 @@ export function getProjectType(project: Project) {
 }
 
 export function getProjectFocus(project: Project) {
-  return (
-    project.facts.find((fact) => fact.label === "Focus")?.value ??
-    project.keywords.slice(0, 2).join(", ")
-  );
+  return project.facts.find((fact) => fact.label === "Focus")?.value;
 }
 
 export function getNextProject(

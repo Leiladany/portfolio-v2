@@ -61,7 +61,7 @@ export function ProjectCardDetailed({
 
         <div className="border-blush-soft mt-auto flex items-center justify-between border-t pt-5">
           <span className="text-charcoal text-[15px] font-medium">
-            View case study
+            View project
           </span>
           <span className="bg-blush text-rose-deep inline-flex h-11 w-11 items-center justify-center rounded-full">
             <AnimatedArrow className="h-4 w-4" />

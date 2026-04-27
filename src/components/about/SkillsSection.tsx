@@ -15,8 +15,8 @@ export function SkillsSection() {
             What I work with
           </h2>
           <p className="text-graphite mt-4 text-base leading-relaxed sm:mt-5 sm:text-lg">
-            A mix of design and frontend tools I have used across student
-            projects, bootcamp work, and personal projects.
+            A selection of design and frontend tools I've used across academic
+            projects, bootcamp work and personal projects.
           </p>
         </div>
 
@@ -24,15 +24,16 @@ export function SkillsSection() {
           <SkillCard
             icon={Palette}
             label="Design"
-            title="Crafting calm, considered interfaces."
-            description="Wireframes, UI exploration, prototyping and visual systems - building interfaces that feel soft, clear and trustworthy."
+            title="Designing clear and thoughtful interfaces."
+            description="Wireframes, UI exploration, prototyping and visual systems, focused on clarity, structure and usability."
             skills={designSkills}
           />
+
           <SkillCard
             icon={Code2}
             label="Frontend"
-            title="Bringing designs to life in the browser."
-            description="Building responsive, accessible, component-based interfaces with React and modern CSS - close to design and kind to users."
+            title="Turning designs into responsive interfaces."
+            description="Building responsive, accessible and component-based interfaces with React and modern CSS."
             skills={frontendSkills}
             delay={80}
           />

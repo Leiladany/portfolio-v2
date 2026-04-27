@@ -6,7 +6,7 @@ export function AboutHero() {
       eyebrow="About"
       title={
         <>
-          A UX/UI developer who cares
+          A developer who cares
           <br />
           <span className="text-rose">about the small details.</span>
         </>

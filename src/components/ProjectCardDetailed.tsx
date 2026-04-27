@@ -1,5 +1,5 @@
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { AnimatedArrow } from "./AnimatedArrow";
 import type { Project } from "../data/types";
 
 type ProjectCardDetailedProps = {
@@ -8,7 +8,9 @@ type ProjectCardDetailedProps = {
 };
 
 function getProjectType(project: Project) {
-  return project.facts.find((fact) => fact.label === "Type")?.value ?? "Project";
+  return (
+    project.facts.find((fact) => fact.label === "Type")?.value ?? "Project"
+  );
 }
 
 export function ProjectCardDetailed({
@@ -16,14 +18,16 @@ export function ProjectCardDetailed({
   index = 0,
 }: ProjectCardDetailedProps) {
   const image = project.images[0];
+  const location = useLocation();
 
   return (
     <Link
       to={`/projects/${project.id}`}
-      className="project-card-detailed group flex flex-col reveal"
+      state={{ returnTo: location.pathname }}
+      className="project-card-detailed group reveal flex flex-col"
       data-delay={index * 80}
     >
-      <div className="m-5 aspect-[16/10] overflow-hidden rounded-[1.5rem] bg-blush-soft">
+      <div className="bg-blush-soft m-5 aspect-[16/10] overflow-hidden rounded-[1.5rem]">
         <img
           src={image.src}
           alt={image.alt}
@@ -34,9 +38,9 @@ export function ProjectCardDetailed({
         />
       </div>
 
-      <div className="flex flex-1 flex-col gap-5 px-8 pb-8 pt-2">
+      <div className="flex flex-1 flex-col gap-5 px-8 pt-2 pb-8">
         <div className="flex items-center gap-3 text-xs">
-          <span className="font-semibold uppercase text-rose-deep">
+          <span className="text-rose-deep font-semibold uppercase">
             {getProjectType(project)}
           </span>
           <span className="text-graphite">&middot;</span>
@@ -44,10 +48,10 @@ export function ProjectCardDetailed({
         </div>
 
         <div>
-          <h3 className="font-display mb-3 text-[1.7rem] text-charcoal transition-colors duration-300 group-hover:text-rose-deep sm:text-3xl">
+          <h3 className="font-display text-charcoal mb-3 text-[1.7rem] transition-colors duration-300 sm:text-3xl">
             {project.title}
           </h3>
-          <p className="text-[15px] leading-relaxed text-graphite sm:text-base">
+          <p className="text-graphite text-[15px] leading-relaxed sm:text-base">
             {project.summary}
           </p>
         </div>
@@ -60,12 +64,12 @@ export function ProjectCardDetailed({
           ))}
         </div>
 
-        <div className="mt-auto flex items-center justify-between border-t border-blush-soft pt-5">
-          <span className="link-underline text-[15px] font-medium text-charcoal">
-            Read the case study
+        <div className="border-blush-soft mt-auto flex items-center justify-between border-t pt-5">
+          <span className="text-charcoal text-[15px] font-medium">
+            View case study
           </span>
-          <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-blush">
-            <ArrowRight className="h-4 w-4 text-rose-deep" />
+          <span className="bg-blush text-rose-deep inline-flex h-11 w-11 items-center justify-center rounded-full">
+            <AnimatedArrow className="h-4 w-4" />
           </span>
         </div>
       </div>

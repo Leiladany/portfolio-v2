@@ -4,7 +4,13 @@ export const skillGroups = [
   {
     id: "design",
     title: "My Design Stack",
-    items: ["Figma", "Canva", "Adobe XD", "Adobe Photoshop", "Adobe Illustrator"],
+    items: [
+      "Figma",
+      "Canva",
+      "Adobe XD",
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+    ],
   },
   {
     id: "frontend",

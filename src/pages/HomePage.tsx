@@ -1,5 +1,7 @@
-import { ArrowRight, Mail, Sparkles } from "lucide-react";
+import { Mail, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
+import { AnimatedArrow } from "../components/AnimatedArrow";
+import { PageIntro } from "../components/PageIntro";
 import { ProjectCard } from "../components/ProjectCard";
 import { SiteLayout } from "../components/SiteLayout";
 import { profileInfo } from "../data/profile";
@@ -23,62 +25,59 @@ export function HomePage() {
 
   return (
     <SiteLayout>
-      <section className="relative pb-28 pt-20 sm:pb-40 sm:pt-40">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8">
-          <h1 className="font-display reveal max-w-4xl text-6xl leading-none text-charcoal sm:text-7xl lg:text-8xl">
+      <PageIntro
+        title={
+          <>
             Hi, I'm <span className="text-rose">{profileInfo.fullName}</span>
             <span className="text-rose">.</span>
-          </h1>
-
-          <div
-            className="reveal mt-8 flex flex-wrap items-center gap-x-5 gap-y-3"
-            data-delay="160"
-          >
-            <p className="text-2xl font-medium leading-tight text-graphite sm:text-3xl">
+          </>
+        }
+        subheading={
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+            <p className="text-graphite text-2xl leading-tight font-medium sm:text-3xl">
               {profileInfo.title}
             </p>
-            <span className="inline-flex items-center gap-2 rounded-full border border-blush bg-blush-soft px-4 py-2 text-sm text-rose-deep">
+            <span className="border-blush bg-blush-soft text-rose-deep inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm">
               <Sparkles className="h-4 w-4 shrink-0" />
-              <span className="whitespace-nowrap font-medium">
+              <span className="font-medium whitespace-nowrap">
                 Open to junior roles
               </span>
             </span>
           </div>
-
-          <p
-            className="reveal mt-8 max-w-2xl text-lg leading-relaxed text-graphite sm:text-xl"
-            data-delay="220"
-          >
+        }
+        description={
+          <>
             I design and build soft, clear and user-friendly digital experiences
             - with care for the small details that make products feel kind.
-          </p>
-
-          <div className="reveal mt-10 flex flex-wrap gap-3" data-delay="280">
+          </>
+        }
+        actions={
+          <>
             <Link to="/projects" className="pill pill-primary">
               View Projects
-              <ArrowRight className="h-4 w-4" />
+              <AnimatedArrow className="h-4 w-4" />
             </Link>
             <Link to="/contact" className="pill pill-ghost">
               Contact Me
             </Link>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+      />
 
       <section className="py-20 sm:py-28">
         <div className="mx-auto max-w-5xl px-6 sm:px-8">
           <div className="reveal mb-12 flex items-end justify-between gap-4">
             <div>
               <p className="eyebrow mb-3">Selected work</p>
-              <h2 className="font-display text-4xl text-charcoal sm:text-5xl">
+              <h2 className="font-display text-charcoal text-4xl sm:text-5xl">
                 Featured projects
               </h2>
             </div>
             <Link
               to="/projects"
-              className="link-underline hidden items-center gap-1.5 text-sm font-medium text-charcoal transition-colors duration-300 hover:text-rose-deep sm:inline-flex"
+              className="link-underline text-charcoal hidden items-center gap-1.5 text-sm font-medium transition-colors duration-300 sm:inline-flex"
             >
-              See all <ArrowRight className="h-4 w-4 shrink-0" />
+              See all <AnimatedArrow className="h-4 w-4" />
             </Link>
           </div>
           <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
@@ -94,40 +93,40 @@ export function HomePage() {
           <div className="reveal mb-10 flex flex-wrap items-end justify-between gap-4">
             <div className="max-w-xl">
               <p className="eyebrow mb-3">Toolbox preview</p>
-              <h2 className="font-display text-4xl text-charcoal sm:text-5xl">
+              <h2 className="font-display text-charcoal text-4xl sm:text-5xl">
                 Tools I love working with
               </h2>
             </div>
             <Link
               to="/about"
-              className="link-underline hidden items-center gap-1.5 text-sm font-medium text-charcoal transition-colors duration-300 hover:text-rose-deep sm:inline-flex"
+              className="link-underline text-charcoal hidden items-center gap-1.5 text-sm font-medium transition-colors duration-300 sm:inline-flex"
             >
-              More about me <ArrowRight className="h-4 w-4 shrink-0" />
+              More about me <AnimatedArrow className="h-4 w-4" />
             </Link>
           </div>
           <div
-            className="reveal flex flex-wrap items-center gap-x-8 gap-y-4 rounded-[2rem] border border-blush-soft bg-white p-7 shadow-soft sm:p-9"
+            className="reveal border-blush-soft shadow-soft grid gap-7 rounded-[2rem] border bg-white p-7 sm:p-9 md:grid-cols-2"
             data-delay="80"
           >
-            <span className="eyebrow text-charcoal">Design</span>
-            <div className="flex min-w-[200px] flex-1 flex-wrap gap-2">
-              {designSkills.slice(0, 4).map((skill) => (
-                <span key={skill} className="chip chip-blush">
-                  {skill}
-                </span>
-              ))}
+            <div>
+              <span className="eyebrow text-charcoal mb-3 block">Design</span>
+              <div className="flex flex-wrap gap-2">
+                {designSkills.slice(0, 4).map((skill) => (
+                  <span key={skill} className="chip chip-blush">
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
-            <span
-              className="hidden h-8 w-px bg-blush-soft sm:block"
-              aria-hidden
-            />
-            <span className="eyebrow text-charcoal">Frontend</span>
-            <div className="flex min-w-[200px] flex-1 flex-wrap gap-2">
-              {frontendSkills.slice(0, 5).map((skill) => (
-                <span key={skill} className="chip chip-blush">
-                  {skill}
-                </span>
-              ))}
+            <div>
+              <span className="eyebrow text-charcoal mb-3 block">Frontend</span>
+              <div className="flex flex-wrap gap-2">
+                {frontendSkills.slice(0, 5).map((skill) => (
+                  <span key={skill} className="chip chip-blush">
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -135,12 +134,12 @@ export function HomePage() {
 
       <section className="py-24 sm:py-32">
         <div className="mx-auto max-w-5xl px-6 sm:px-8">
-          <div className="reveal rounded-[2rem] border border-blush bg-blush-soft p-10 text-center sm:p-16">
+          <div className="reveal border-blush bg-blush-soft rounded-[2rem] border p-10 text-center sm:p-16">
             <p className="eyebrow mb-4">Let's chat</p>
-            <h2 className="font-display text-4xl leading-tight text-charcoal sm:text-5xl">
+            <h2 className="font-display text-charcoal text-4xl leading-tight sm:text-5xl">
               Open to junior opportunities.
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-graphite sm:text-xl">
+            <p className="text-graphite mx-auto mt-6 max-w-xl text-lg leading-relaxed sm:text-xl">
               I'm open to junior UX/UI and frontend opportunities where I can
               keep learning, contribute to real products, and grow with a team.
             </p>

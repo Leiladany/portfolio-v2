@@ -6,7 +6,11 @@ type DocumentMeta = {
   image?: string;
 };
 
-function upsertMeta(attribute: "name" | "property", key: string, content: string) {
+function upsertMeta(
+  attribute: "name" | "property",
+  key: string,
+  content: string,
+) {
   let element = document.head.querySelector<HTMLMetaElement>(
     `meta[${attribute}="${key}"]`,
   );

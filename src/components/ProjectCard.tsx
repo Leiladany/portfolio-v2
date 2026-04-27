@@ -1,5 +1,5 @@
-import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { AnimatedArrow } from "./AnimatedArrow";
 import type { Project } from "../data/types";
 
 type ProjectCardProps = {
@@ -9,14 +9,16 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
   const image = project.images[0];
+  const location = useLocation();
 
   return (
     <Link
       to={`/projects/${project.id}`}
-      className="project-card group flex flex-col reveal"
+      state={{ returnTo: location.pathname }}
+      className="project-card group reveal flex flex-col"
       data-delay={index * 80}
     >
-      <div className="m-4 aspect-[4/3] overflow-hidden rounded-[1.5rem] bg-blush-soft">
+      <div className="bg-blush-soft m-4 aspect-[4/3] overflow-hidden rounded-[1.5rem]">
         <img
           src={image.src}
           alt={image.alt}
@@ -26,21 +28,21 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
         />
       </div>
-      <div className="flex flex-1 flex-col gap-3 px-7 pb-7 pt-1">
+      <div className="flex flex-1 flex-col gap-3 px-7 pt-1 pb-7">
         <div>
-          <h3 className="font-display mb-2 text-2xl text-charcoal transition-colors duration-300 group-hover:text-rose-deep">
+          <h3 className="font-display text-charcoal mb-2 text-2xl transition-colors duration-300">
             {project.title}
           </h3>
-          <p className="text-[15px] leading-relaxed text-graphite">
+          <p className="text-graphite text-[15px] leading-relaxed">
             {project.summary}
           </p>
         </div>
         <div className="mt-auto flex items-center justify-between pt-4">
-          <span className="link-underline text-sm font-medium text-charcoal">
+          <span className="text-charcoal text-sm font-medium">
             View case study
           </span>
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blush">
-            <ArrowRight className="h-4 w-4 text-rose-deep" />
+          <span className="bg-blush text-rose-deep flex h-10 w-10 items-center justify-center rounded-full">
+            <AnimatedArrow className="h-4 w-4" />
           </span>
         </div>
       </div>

@@ -41,11 +41,14 @@
   --color-charcoal: var(--charcoal);
   --color-graphite: var(--graphite);
 
-  --shadow-soft: 0 2px 12px rgba(255, 182, 200, 0.2),
-    0 1px 2px rgba(28, 28, 28, 0.02);
-  --shadow-soft-lg: 0 12px 36px rgba(255, 153, 180, 0.26),
-    0 2px 8px rgba(28, 28, 28, 0.03);
+  --shadow-soft:
+    0 2px 12px rgba(255, 182, 200, 0.2), 0 1px 2px rgba(28, 28, 28, 0.02);
+  --shadow-soft-lg:
+    0 12px 36px rgba(255, 153, 180, 0.26), 0 2px 8px rgba(28, 28, 28, 0.03);
   --shadow-pink-glow: 0 16px 44px rgba(255, 153, 180, 0.32);
+  --motion-hover: 360ms cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-shadow: 460ms cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-arrow: 540ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 :root {
@@ -106,10 +109,10 @@
     transition:
       background-color 260ms ease,
       border-color 260ms ease,
-      box-shadow 260ms ease,
+      box-shadow var(--motion-shadow),
       color 260ms ease,
       opacity 260ms ease,
-      transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
+      transform var(--motion-hover);
   }
 
   img {
@@ -154,7 +157,9 @@
 @layer utilities {
   .font-display {
     font-family: var(--font-display);
-    font-variation-settings: "opsz" 144, "SOFT" 100;
+    font-variation-settings:
+      "opsz" 144,
+      "SOFT" 100;
     font-weight: 500;
     letter-spacing: 0;
   }
@@ -179,10 +184,10 @@
     font-weight: 500;
     white-space: nowrap;
     transition:
-      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+      transform var(--motion-hover),
       background-color 0.3s ease,
       border-color 0.3s ease,
-      box-shadow 0.3s ease,
+      box-shadow var(--motion-shadow),
       color 0.3s ease;
   }
 
@@ -253,8 +258,8 @@
     box-shadow: var(--shadow-soft);
     transition:
       border-color 0.3s ease,
-      box-shadow 0.3s ease,
-      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow var(--motion-shadow),
+      transform var(--motion-hover);
   }
 
   .soft-card:hover {
@@ -271,8 +276,8 @@
     box-shadow: var(--shadow-soft);
     transition:
       border-color 0.3s ease,
-      box-shadow 0.3s ease,
-      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow var(--motion-shadow),
+      transform var(--motion-hover);
   }
 
   .project-card:hover {
@@ -289,8 +294,8 @@
     box-shadow: var(--shadow-soft);
     transition:
       border-color 0.3s ease,
-      box-shadow 0.3s ease,
-      transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow var(--motion-shadow),
+      transform var(--motion-hover);
   }
 
   .project-card-detailed:hover {
@@ -320,9 +325,40 @@
     transition: transform 260ms cubic-bezier(0.16, 1, 0.3, 1);
   }
 
+  a:hover .link-underline::after,
+  .group:hover .link-underline::after,
   .link-underline:hover::after {
     transform: scaleX(1);
     transform-origin: left center;
+  }
+
+  .animated-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .animated-arrow svg {
+    transform: translate(0, 0);
+  }
+
+  a:hover .animated-arrow-right svg,
+  button:hover .animated-arrow-right svg,
+  .group:hover .animated-arrow-right svg {
+    animation: arrow-motion-right var(--motion-arrow);
+  }
+
+  a:hover .animated-arrow-left svg,
+  button:hover .animated-arrow-left svg,
+  .group:hover .animated-arrow-left svg {
+    animation: arrow-motion-left var(--motion-arrow);
+  }
+
+  a:hover .animated-arrow-external svg,
+  button:hover .animated-arrow-external svg,
+  .group:hover .animated-arrow-external svg {
+    animation: arrow-motion-external var(--motion-arrow);
   }
 
   .nav-link {
@@ -348,6 +384,63 @@
   }
 }
 
+@keyframes arrow-motion-right {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  38% {
+    opacity: 0;
+    transform: translateX(70%);
+  }
+  39% {
+    opacity: 0;
+    transform: translateX(-70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes arrow-motion-left {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  38% {
+    opacity: 0;
+    transform: translateX(-70%);
+  }
+  39% {
+    opacity: 0;
+    transform: translateX(70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes arrow-motion-external {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  38% {
+    opacity: 0;
+    transform: translate(60%, -60%);
+  }
+  39% {
+    opacity: 0;
+    transform: translate(-60%, 60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -366,5 +459,9 @@
     opacity: 1;
     filter: none;
     transform: none;
+  }
+
+  .animated-arrow svg {
+    animation: none !important;
   }
 }

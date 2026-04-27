@@ -22,8 +22,8 @@ export function NotFoundPage({
     <SiteLayout>
       <div className="mx-auto max-w-3xl px-6 py-32 text-center">
         <p className="eyebrow mb-4">{eyebrow}</p>
-        <h1 className="font-display mb-4 text-4xl text-charcoal">{title}</h1>
-        <p className="mx-auto max-w-md text-graphite">{description}</p>
+        <h1 className="font-display text-charcoal mb-4 text-4xl">{title}</h1>
+        <p className="text-graphite mx-auto max-w-md">{description}</p>
         <Link to="/" className="pill pill-primary mt-8">
           Go home
         </Link>

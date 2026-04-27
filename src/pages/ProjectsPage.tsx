@@ -1,3 +1,4 @@
+import { PageIntro } from "../components/PageIntro";
 import { ProjectCardDetailed } from "../components/ProjectCardDetailed";
 import { SiteLayout } from "../components/SiteLayout";
 import { projects } from "../data/projects";
@@ -12,23 +13,22 @@ export function ProjectsPage() {
 
   return (
     <SiteLayout>
-      <section className="pb-16 pt-8 sm:pt-28">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8">
-          <p className="eyebrow reveal">Case studies</p>
-          <h1 className="font-display reveal mt-5 text-5xl leading-none text-charcoal sm:text-6xl lg:text-7xl">
+      <PageIntro
+        eyebrow="Case studies"
+        title={
+          <>
             Things I've designed
             <br />
             and built.
-          </h1>
-          <p
-            className="reveal mt-7 max-w-2xl text-lg leading-relaxed text-graphite sm:text-xl"
-            data-delay="140"
-          >
+          </>
+        }
+        description={
+          <>
             A small set of student and personal projects - each one taught me
             something about people, interfaces, or both.
-          </p>
-        </div>
-      </section>
+          </>
+        }
+      />
 
       <section className="pb-32">
         <div className="mx-auto max-w-5xl px-6 sm:px-8">

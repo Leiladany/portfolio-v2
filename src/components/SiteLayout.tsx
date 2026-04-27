@@ -18,7 +18,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
   useReveal();
 
   return (
-    <div className="relative flex min-h-screen flex-col overflow-x-hidden bg-background">
+    <div className="bg-background relative flex min-h-screen flex-col overflow-x-hidden">
       <Header />
       <main className="relative z-10 flex-1">{children}</main>
       <Footer />
@@ -28,7 +28,7 @@ export function SiteLayout({ children }: SiteLayoutProps) {
 
 function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-stone/60 bg-background/80 backdrop-blur-md">
+    <header className="border-stone/60 bg-background/80 sticky top-0 z-40 border-b backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-5 sm:px-8">
         <Link to="/" className="flex shrink-0 items-center gap-2">
           <span
@@ -39,7 +39,9 @@ function Header() {
             }}
             aria-hidden
           />
-          <span className="font-display text-lg">{profileInfo.firstName} T.</span>
+          <span className="font-display text-lg">
+            {profileInfo.firstName} T.
+          </span>
         </Link>
 
         <nav className="flex min-w-0 items-center gap-1 overflow-x-auto">
@@ -50,7 +52,7 @@ function Header() {
               end={link.end}
               className={({ isActive }) =>
                 [
-                  "nav-link rounded-full px-3 py-2 text-sm font-medium text-graphite hover:bg-blush/60 hover:text-charcoal sm:px-4",
+                  "nav-link text-graphite hover:bg-blush/60 hover:text-charcoal rounded-full px-3 py-2 text-sm font-medium sm:px-4",
                   isActive ? "bg-blush text-charcoal" : "",
                 ].join(" ")
               }
@@ -66,8 +68,8 @@ function Header() {
 
 function Footer() {
   return (
-    <footer className="relative z-10 mt-24 border-t border-stone/60">
-      <div className="mx-auto flex max-w-5xl flex-col items-start justify-between gap-4 px-6 py-10 text-sm text-graphite sm:flex-row sm:items-center sm:px-8">
+    <footer className="border-stone/60 relative z-10 mt-24 border-t">
+      <div className="text-graphite mx-auto flex max-w-5xl flex-col items-start justify-between gap-4 px-6 py-10 text-sm sm:flex-row sm:items-center sm:px-8">
         <p>
           &copy; {new Date().getFullYear()} {profileInfo.fullName} - Designed
           and built with care.
@@ -76,7 +78,7 @@ function Footer() {
           {profileInfo.socials.map((social) => (
             <a
               key={social.platform}
-              className="link-underline text-graphite transition-colors duration-300 hover:text-charcoal"
+              className="link-underline text-graphite transition-colors duration-300"
               href={social.href}
               target={social.href.startsWith("http") ? "_blank" : undefined}
               rel={social.href.startsWith("http") ? "noreferrer" : undefined}

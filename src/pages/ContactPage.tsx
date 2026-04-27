@@ -1,5 +1,6 @@
 import type { LucideIcon } from "lucide-react";
 import { BriefcaseBusiness, Code2, FileText, Mail } from "lucide-react";
+import { PageIntro } from "../components/PageIntro";
 import { SiteLayout } from "../components/SiteLayout";
 import { profileInfo } from "../data/profile";
 import type { SocialPlatform } from "../data/types";
@@ -23,7 +24,10 @@ function getSocialValue(platform: SocialPlatform, href: string) {
     return href.replace("mailto:", "");
   }
 
-  return href.replace("https://www.", "").replace("https://", "").replace(/\/$/, "");
+  return href
+    .replace("https://www.", "")
+    .replace("https://", "")
+    .replace(/\/$/, "");
 }
 
 function getContactLinks(): ContactLink[] {
@@ -48,30 +52,30 @@ function getContactLinks(): ContactLink[] {
 export function ContactPage() {
   useDocumentMeta({
     title: "Contact - Leila Teixeira",
-    description: "Get in touch with Leila Teixeira - UX/UI and frontend developer.",
+    description:
+      "Get in touch with Leila Teixeira - UX/UI and frontend developer.",
   });
 
   const contactLinks = getContactLinks();
 
   return (
     <SiteLayout>
-      <section className="pb-12 pt-20 sm:pt-28">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8">
-          <p className="eyebrow reveal">Contact</p>
-          <h1 className="font-display reveal mt-4 text-5xl leading-none text-charcoal sm:text-6xl">
+      <PageIntro
+        eyebrow="Contact"
+        title={
+          <>
             Let's build something
             <br />
             <span className="text-rose">soft and friendly.</span>
-          </h1>
-          <p
-            className="reveal mt-6 max-w-xl text-lg leading-relaxed text-graphite"
-            data-delay="140"
-          >
-            I'm always happy to talk about new opportunities, collaborations,
-            or just to say hi. The fastest way to reach me is by email.
-          </p>
-        </div>
-      </section>
+          </>
+        }
+        description={
+          <>
+            I'm always happy to talk about new opportunities, collaborations, or
+            just to say hi. The fastest way to reach me is by email.
+          </>
+        }
+      />
 
       <section className="pb-24">
         <div className="mx-auto max-w-5xl px-6 sm:px-8">
@@ -82,15 +86,15 @@ export function ContactPage() {
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                className="soft-card group flex items-center gap-5 p-7 reveal"
+                className="soft-card group reveal flex items-center gap-5 p-7"
                 data-delay={index * 70}
               >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blush">
-                  <link.icon className="h-5 w-5 text-charcoal" />
+                <span className="bg-blush flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl">
+                  <link.icon className="text-charcoal h-5 w-5" />
                 </span>
                 <span className="min-w-0">
                   <span className="eyebrow mb-1 block">{link.label}</span>
-                  <span className="block truncate font-medium text-charcoal">
+                  <span className="text-charcoal block truncate font-medium">
                     {link.value}
                   </span>
                 </span>

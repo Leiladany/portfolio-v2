@@ -1,13 +1,26 @@
-import { ArrowLeft, ArrowRight, Code2, ExternalLink } from "lucide-react";
-import { Link, useParams } from "react-router-dom";
+import { Code2 } from "lucide-react";
+import { Link, useLocation, useParams } from "react-router-dom";
+import { AnimatedArrow } from "../components/AnimatedArrow";
+import { PageIntro } from "../components/PageIntro";
 import { ProjectStorySection } from "../components/ProjectStorySection";
 import { SiteLayout } from "../components/SiteLayout";
 import { getProjectById, projects } from "../data/projects";
 import { useDocumentMeta } from "../hooks/useDocumentMeta";
 import { NotFoundPage } from "./NotFoundPage";
 
+type ProjectDetailLocationState = {
+  returnTo?: string;
+};
+
+function getSafeReturnPath(value: unknown) {
+  return value === "/" || value === "/projects" ? value : "/projects";
+}
+
 export function ProjectDetailPage() {
   const { projectId } = useParams<{ projectId: string }>();
+  const location = useLocation();
+  const locationState = location.state as ProjectDetailLocationState | null;
+  const returnTo = getSafeReturnPath(locationState?.returnTo);
   const project = projectId ? getProjectById(projectId) : undefined;
 
   useDocumentMeta({
@@ -37,55 +50,54 @@ export function ProjectDetailPage() {
       ? projects[(currentProjectIndex + 1) % projects.length]
       : undefined;
   const image = project.images[0];
+  const projectFocus =
+    project.facts.find((fact) => fact.label === "Focus")?.value ??
+    project.keywords.slice(0, 2).join(", ");
 
   return (
     <SiteLayout>
-      <section className="pb-10 pt-8 sm:pt-28">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8">
+      <PageIntro
+        before={
           <Link
-            to="/projects"
-            className="link-underline inline-flex items-center gap-2 text-sm text-graphite transition-colors duration-300 hover:text-charcoal"
+            to={returnTo}
+            className="link-underline text-graphite inline-flex items-center gap-2 text-sm transition-colors duration-300"
           >
-            <ArrowLeft className="h-4 w-4 shrink-0" />
-            <span>All projects</span>
+            <AnimatedArrow direction="left" className="h-4 w-4" />
+            <span>Back</span>
           </Link>
-
-          <div className="reveal">
-            <h1 className="font-display max-w-3xl text-4xl mt-5 leading-tight text-charcoal sm:text-5xl lg:text-6xl">
-              {project.title}
-            </h1>
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-graphite sm:text-xl">
-              {project.summary}
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              {project.links.demo ? (
-                <a
-                  href={project.links.demo}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="pill pill-rose"
-                >
-                  Live demo <ExternalLink className="h-4 w-4" />
-                </a>
-              ) : null}
-              {project.links.repo ? (
-                <a
-                  href={project.links.repo}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="pill pill-ghost"
-                >
-                  <Code2 className="h-4 w-4" /> Repository
-                </a>
-              ) : null}
-            </div>
-          </div>
-        </div>
-      </section>
+        }
+        title={project.title}
+        description={project.summary}
+        actions={
+          <>
+            {project.links.demo ? (
+              <a
+                href={project.links.demo}
+                target="_blank"
+                rel="noreferrer"
+                className="pill pill-rose"
+              >
+                Live demo{" "}
+                <AnimatedArrow direction="external" className="h-4 w-4" />
+              </a>
+            ) : null}
+            {project.links.repo ? (
+              <a
+                href={project.links.repo}
+                target="_blank"
+                rel="noreferrer"
+                className="pill pill-ghost"
+              >
+                <Code2 className="h-4 w-4" /> Repository
+              </a>
+            ) : null}
+          </>
+        }
+      />
 
       <section className="py-10">
         <div className="mx-auto max-w-5xl px-6 sm:px-8">
-          <div className="reveal overflow-hidden rounded-[2rem] border border-blush bg-blush-soft">
+          <div className="reveal border-blush bg-blush-soft overflow-hidden rounded-[2rem] border">
             <img
               src={image.src}
               alt={image.alt}
@@ -95,7 +107,7 @@ export function ProjectDetailPage() {
             />
           </div>
           {image.caption ? (
-            <p className="mt-3 text-sm text-graphite">{image.caption}</p>
+            <p className="text-graphite mt-3 text-sm">{image.caption}</p>
           ) : null}
         </div>
       </section>
@@ -104,8 +116,8 @@ export function ProjectDetailPage() {
         <div className="mx-auto max-w-5xl px-6 sm:px-8">
           <div className="reveal grid gap-6 sm:grid-cols-3">
             <div className="soft-card p-6 sm:col-span-1">
-              <p className="eyebrow mb-2">Date</p>
-              <p className="text-charcoal">{project.date}</p>
+              <p className="eyebrow mb-2">Focus</p>
+              <p className="text-charcoal">{projectFocus}</p>
             </div>
             <div className="soft-card p-6 sm:col-span-2">
               <p className="eyebrow mb-3">Stack</p>
@@ -149,17 +161,18 @@ export function ProjectDetailPage() {
       </section>
 
       {nextProject ? (
-        <section className="pb-16 pt-10">
+        <section className="pt-10 pb-16">
           <div className="mx-auto max-w-5xl px-6 sm:px-8">
-            <div className="border-t border-stone pt-8">
+            <div className="border-stone border-t pt-8">
               <Link
                 to={`/projects/${nextProject.id}`}
+                state={{ returnTo }}
                 className="group reveal flex items-center justify-between gap-4 text-sm"
               >
                 <span className="text-graphite">Next case study</span>
-                <span className="link-underline inline-flex items-center gap-2 font-medium text-charcoal transition-colors duration-300 group-hover:text-rose-deep">
+                <span className="link-underline text-charcoal inline-flex items-center gap-2 font-medium transition-colors duration-300">
                   <span>{nextProject.title}</span>
-                  <ArrowRight className="h-3.5 w-3.5 shrink-0 transition-transform duration-300 group-hover:translate-x-0.5" />
+                  <AnimatedArrow className="h-3.5 w-3.5" />
                 </span>
               </Link>
             </div>

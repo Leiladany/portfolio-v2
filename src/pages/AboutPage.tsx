@@ -1,4 +1,5 @@
 import { Code2, FileText, Mail, Palette } from "lucide-react";
+import { PageIntro } from "../components/PageIntro";
 import { SiteLayout } from "../components/SiteLayout";
 import { profileInfo } from "../data/profile";
 import { skillGroups } from "../data/skills";
@@ -18,22 +19,22 @@ export function AboutPage() {
 
   return (
     <SiteLayout>
-      <section className="pb-12 pt-24 sm:pt-28">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8">
-          <p className="eyebrow reveal">About</p>
-          <h1 className="font-display reveal mt-5 text-5xl leading-none text-charcoal sm:text-6xl lg:text-7xl">
+      <PageIntro
+        eyebrow="About"
+        title={
+          <>
             A UX/UI developer who cares
             <br />
             <span className="text-rose">about the small details.</span>
-          </h1>
-        </div>
-      </section>
+          </>
+        }
+      />
 
       <section className="pb-10">
         <div className="mx-auto max-w-5xl px-6 sm:px-8">
-          <div className="reveal flex w-full flex-wrap items-center gap-3 rounded-[1.75rem] border border-blush bg-blush-soft px-7 py-5 text-base text-charcoal">
+          <div className="reveal border-blush bg-blush-soft text-charcoal flex w-full flex-wrap items-center gap-3 rounded-[1.75rem] border px-5 py-3 text-base">
             <span
-              className="h-2.5 w-2.5 shrink-0 rounded-full bg-rose"
+              className="bg-rose h-2.5 w-2.5 shrink-0 rounded-full"
               aria-hidden
             />
             <span className="font-medium">Currently</span>
@@ -50,7 +51,7 @@ export function AboutPage() {
           {profileInfo.aboutParagraphs.slice(0, 2).map((paragraph) => (
             <p
               key={paragraph}
-              className="text-xl leading-relaxed text-graphite"
+              className="text-graphite text-xl leading-relaxed"
             >
               {paragraph}
             </p>
@@ -62,10 +63,10 @@ export function AboutPage() {
         <div className="mx-auto max-w-5xl px-6 sm:px-8">
           <div className="reveal mb-12 max-w-xl">
             <p className="eyebrow mb-3">Skills and tools</p>
-            <h2 className="font-display text-4xl text-charcoal sm:text-5xl">
+            <h2 className="font-display text-charcoal text-4xl sm:text-5xl">
               What I work with
             </h2>
-            <p className="mt-5 text-lg leading-relaxed text-graphite">
+            <p className="text-graphite mt-5 text-lg leading-relaxed">
               A mix of design and frontend tools I have used across student
               projects, bootcamp work, and personal projects.
             </p>
@@ -74,15 +75,15 @@ export function AboutPage() {
           <div className="grid gap-7 md:grid-cols-2">
             <div className="soft-card reveal p-8 sm:p-10">
               <div className="mb-2 flex items-center gap-3">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-blush">
-                  <Palette className="h-5 w-5 text-rose-deep" />
+                <span className="bg-blush inline-flex h-11 w-11 items-center justify-center rounded-2xl">
+                  <Palette className="text-rose-deep h-5 w-5" />
                 </span>
                 <p className="eyebrow text-charcoal">Design</p>
               </div>
-              <h3 className="font-display mb-3 mt-3 text-2xl text-charcoal">
+              <h3 className="font-display text-charcoal mt-3 mb-3 text-2xl">
                 Crafting calm, considered interfaces.
               </h3>
-              <p className="mb-6 text-base leading-relaxed text-graphite">
+              <p className="text-graphite mb-6 text-base leading-relaxed">
                 Wireframes, UI exploration, prototyping and visual systems -
                 building interfaces that feel soft, clear and trustworthy.
               </p>
@@ -97,15 +98,15 @@ export function AboutPage() {
 
             <div className="soft-card reveal p-8 sm:p-10" data-delay="80">
               <div className="mb-2 flex items-center gap-3">
-                <span className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-blush">
-                  <Code2 className="h-5 w-5 text-rose-deep" />
+                <span className="bg-blush inline-flex h-11 w-11 items-center justify-center rounded-2xl">
+                  <Code2 className="text-rose-deep h-5 w-5" />
                 </span>
                 <p className="eyebrow text-charcoal">Frontend</p>
               </div>
-              <h3 className="font-display mb-3 mt-3 text-2xl text-charcoal">
+              <h3 className="font-display text-charcoal mt-3 mb-3 text-2xl">
                 Bringing designs to life in the browser.
               </h3>
-              <p className="mb-6 text-base leading-relaxed text-graphite">
+              <p className="text-graphite mb-6 text-base leading-relaxed">
                 Building responsive, accessible, component-based interfaces with
                 React and modern CSS - close to design and kind to users.
               </p>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AnimatedArrow } from "../common/AnimatedArrow";
 import { PageIntro } from "../common/PageIntro";
 import type { Project } from "../../data/types";
+import { formatProjectDateRange } from "../../utils/projectUtils";
 
 type ProjectDetailHeroProps = {
   project: Project;
@@ -13,6 +14,8 @@ export function ProjectDetailHero({
   project,
   returnTo,
 }: ProjectDetailHeroProps) {
+  const projectDate = formatProjectDateRange(project);
+
   return (
     <PageIntro
       before={
@@ -24,7 +27,14 @@ export function ProjectDetailHero({
           <span>Back</span>
         </Link>
       }
-      title={project.title}
+      title={
+        <span className="inline-flex flex-wrap items-baseline gap-x-4 gap-y-2">
+          <span>{project.title}</span>
+          <span className="text-rose-deep font-sans text-sm leading-none font-semibold sm:text-base lg:text-lg">
+            {projectDate}
+          </span>
+        </span>
+      }
       description={project.summary}
       actions={
         <>

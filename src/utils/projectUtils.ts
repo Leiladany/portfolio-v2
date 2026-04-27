@@ -1,5 +1,20 @@
 import type { Project } from "../data/types";
 
+const monthLabels = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+] as const;
+
 export function getProjectType(project: Project) {
   return (
     project.facts.find((fact) => fact.label === "Type")?.value ?? "Project"
@@ -7,7 +22,23 @@ export function getProjectType(project: Project) {
 }
 
 export function getProjectFocus(project: Project) {
-  return project.facts.find((fact) => fact.label === "Focus")?.value;
+  const factFocus = project.facts.find((fact) => fact.label === "Focus")?.value;
+
+  return factFocus || getProjectType(project);
+}
+
+export function formatProjectDateRange(project: Project) {
+  if (!project.dateEnd) {
+    return `${formatProjectMonth(project.dateStart)} - Present`;
+  }
+
+  if (isSameProjectMonth(project.dateStart, project.dateEnd)) {
+    return formatProjectMonth(project.dateStart);
+  }
+
+  return `${formatProjectMonth(project.dateStart)} - ${formatProjectMonth(
+    project.dateEnd,
+  )}`;
 }
 
 export function getNextProject(
@@ -27,4 +58,15 @@ export function getNextProject(
 
 export function getSafeReturnPath(value: unknown) {
   return value === "/" || value === "/projects" ? value : "/projects";
+}
+
+function formatProjectMonth(date: Date) {
+  return `${monthLabels[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
+}
+
+function isSameProjectMonth(firstDate: Date, secondDate: Date) {
+  return (
+    firstDate.getUTCFullYear() === secondDate.getUTCFullYear() &&
+    firstDate.getUTCMonth() === secondDate.getUTCMonth()
+  );
 }

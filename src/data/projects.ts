@@ -6,10 +6,11 @@ const projectEntries = [
     title: "Play It Better: Summer School",
     summary:
       "A website designed to present a children's summer school program in a clear, friendly and easy-to-understand way.",
-    date: "2024",
+    dateStart: new Date("2024-04-01"),
+    dateEnd: new Date("2024-05-21"),
     images: [
       {
-        src: "/projects/playitbetter.png",
+        src: "/projects/playitbetter/playitbetter-1.png",
         alt: "Landing page preview of Play It Better: Summer School.",
       },
     ],
@@ -43,61 +44,17 @@ const projectEntries = [
       repo: "https://github.com/Leiladany/PlayItBetter-client",
       demo: "https://playitbetter.netlify.app/",
     },
-    sortOrder: 2,
-  },
-  {
-    id: "empowered",
-    title: "Empowered",
-    summary:
-      "An educational platform designed to present sensitive topics in a clear, approachable and structured way.",
-    date: "2023",
-    images: [
-      {
-        src: "/projects/empowered.png",
-        alt: "Homepage preview of the Empowered platform.",
-      },
-    ],
-    stack: ["React", "JavaScript", "Mantine"],
-    facts: [
-      { label: "Type", value: "Educational platform" },
-      { label: "Focus", value: "Content clarity and trust" },
-    ],
-    story: {
-      overview: [
-        "Empowered is a platform focused on topics like sexuality, health and relationships, where the main goal is to make information feel accessible and easy to understand.",
-      ],
-      problem: [
-        "Content around sensitive subjects can easily feel overwhelming, too technical, or uncomfortable to navigate. Without the right structure, users may disengage before finding what they need.",
-      ],
-      goal: [
-        "The goal was to create a space where users feel comfortable exploring content, with a strong focus on clarity, readability and trust.",
-      ],
-      userFlow: [
-        "Users can explore different topics, dive deeper into specific content, and move through the platform without feeling lost or overloaded.",
-      ],
-      designDecisions: [
-        "The design follows a content-first approach, using spacing, hierarchy and simple layouts to support reading and understanding.",
-        "From a technical perspective, the project connects a React frontend with an Express and MongoDB backend, allowing content to be structured and delivered dynamically.",
-      ],
-      learnings: [
-        "This project showed how important structure and tone are in building trust. Clear organization and calm visual design make a big difference when dealing with sensitive topics.",
-      ],
-    },
-    links: {
-      repo: "https://github.com/Leiladany/Empowered-v2",
-      demo: "https://feeling-empowered.netlify.app/",
-    },
-    sortOrder: 3,
   },
   {
     id: "pawsitive-pets",
     title: "Pawsitive Pets",
     summary:
       "A simple web app that helps users organize and manage important information about their pets.",
-    date: "2023",
+    dateStart: new Date("2023-02-01"),
+    dateEnd: new Date("2023-02-28"),
     images: [
       {
-        src: "/projects/pawsitive.png",
+        src: "/projects/pawsitive/pawsitive-1.png",
         alt: "Dashboard preview of the Pawsitive Pets web app.",
       },
     ],
@@ -131,17 +88,61 @@ const projectEntries = [
       repo: "https://github.com/Leiladany/PawsitivePets-v2",
       demo: "https://pawsitivepets.netlify.app/",
     },
-    sortOrder: 4,
+  },
+  {
+    id: "empowered",
+    title: "Empowered",
+    summary:
+      "An educational platform designed to present sensitive topics in a clear, approachable and structured way.",
+    dateStart: new Date("2023-01-05"),
+    dateEnd: new Date("2023-01-31"),
+    images: [
+      {
+        src: "/projects/empowered/empowered-1.png",
+        alt: "Homepage preview of the Empowered platform.",
+      },
+    ],
+    stack: ["React", "JavaScript", "Mantine"],
+    facts: [
+      { label: "Type", value: "Educational platform" },
+      { label: "Focus", value: "Content clarity and trust" },
+    ],
+    story: {
+      overview: [
+        "Empowered is a platform focused on topics like sexuality, health and relationships, where the main goal is to make information feel accessible and easy to understand.",
+      ],
+      problem: [
+        "Content around sensitive subjects can easily feel overwhelming, too technical, or uncomfortable to navigate. Without the right structure, users may disengage before finding what they need.",
+      ],
+      goal: [
+        "The goal was to create a space where users feel comfortable exploring content, with a strong focus on clarity, readability and trust.",
+      ],
+      userFlow: [
+        "Users can explore different topics, dive deeper into specific content, and move through the platform without feeling lost or overloaded.",
+      ],
+      designDecisions: [
+        "The design follows a content-first approach, using spacing, hierarchy and simple layouts to support reading and understanding.",
+        "From a technical perspective, the project connects a React frontend with an Express and MongoDB backend, allowing content to be structured and delivered dynamically.",
+      ],
+      learnings: [
+        "This project showed how important structure and tone are in building trust. Clear organization and calm visual design make a big difference when dealing with sensitive topics.",
+      ],
+    },
+    links: {
+      repo: "https://github.com/Leiladany/Empowered-v2",
+      demo: "https://feeling-empowered.netlify.app/",
+    },
   },
   {
     id: "escaping-westview",
     title: "Escaping Westview",
     summary:
       "A simple 2D browser game focused on movement, timing and player feedback.",
-    date: "2022",
+    dateStart: new Date("2023-01-01"),
+    dateEnd: new Date("2023-01-31"),
     images: [
       {
-        src: "/projects/westview.png",
+        src: "/projects/westview/westview-1.png",
         alt: "Gameplay screenshot from the Escaping Westview browser game.",
       },
     ],
@@ -173,13 +174,12 @@ const projectEntries = [
     links: {
       demo: "https://leiladany.github.io/Escaping-Westview/",
     },
-    sortOrder: 5,
   },
 ] satisfies readonly Project[];
 
 export const projects = [...projectEntries].sort(
   (firstProject, secondProject) =>
-    firstProject.sortOrder - secondProject.sortOrder,
+    secondProject.dateStart.getTime() - firstProject.dateStart.getTime(),
 );
 
 export function getProjectById(projectId: string) {

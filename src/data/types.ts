@@ -58,11 +58,11 @@ export type Project = {
   id: string;
   title: string;
   summary: string;
-  date: string;
+  dateStart: Date;
+  dateEnd?: Date;
   images: readonly [ProjectImage, ...ProjectImage[]];
   stack: readonly string[];
   facts: readonly ProjectFact[];
   story: ProjectStory;
   links: ProjectLinks;
-  sortOrder: number;
 };

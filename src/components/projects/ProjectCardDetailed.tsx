@@ -1,7 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
 import { AnimatedArrow } from "../common/AnimatedArrow";
 import type { Project } from "../../data/types";
-import { getProjectType } from "../../utils/projectUtils";
+import {
+  formatProjectDateRange,
+  getProjectType,
+} from "../../utils/projectUtils";
 
 type ProjectCardDetailedProps = {
   project: Project;
@@ -14,6 +17,7 @@ export function ProjectCardDetailed({
 }: ProjectCardDetailedProps) {
   const image = project.images[0];
   const location = useLocation();
+  const projectDate = formatProjectDateRange(project);
 
   return (
     <Link
@@ -39,7 +43,7 @@ export function ProjectCardDetailed({
             {getProjectType(project)}
           </span>
           <span className="text-graphite">&middot;</span>
-          <span className="text-graphite">{project.date}</span>
+          <span className="text-graphite">{projectDate}</span>
         </div>
 
         <div>

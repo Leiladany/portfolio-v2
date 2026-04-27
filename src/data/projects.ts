@@ -6,6 +6,7 @@ const projectEntries = [
     title: "Play It Better: Summer School",
     summary:
       "A project for children that aims to make learning English feel more approachable through a friendly and accessible interface.",
+    date: "2023",
     images: [
       {
         src: "/projects/playitbetter.png",
@@ -58,6 +59,7 @@ const projectEntries = [
     title: "Empowered",
     summary:
       "An online platform dedicated to helping young people and adults explore topics related to sexuality, health, and relationships in a clear and approachable way.",
+    date: "2023",
     images: [
       {
         src: "/projects/empowered.png",
@@ -118,6 +120,7 @@ const projectEntries = [
     title: "Pawsitive Pets",
     summary:
       "A simple online agenda where users can organize and keep track of important information related to their pets.",
+    date: "2023",
     images: [
       {
         src: "/projects/pawsitive.png",
@@ -177,6 +180,7 @@ const projectEntries = [
     title: "Escaping Westview",
     summary:
       "A 2D browser game inspired by the Disney+ series WandaVision, where the goal is to survive incoming spells for as long as possible.",
+    date: "2022",
     images: [
       {
         src: "/projects/westview.png",

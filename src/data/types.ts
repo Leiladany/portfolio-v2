@@ -51,6 +51,7 @@ export type Project = {
   id: string;
   title: string;
   summary: string;
+  date: string;
   images: readonly [ProjectImage, ...ProjectImage[]];
   stack: readonly string[];
   keywords: readonly string[];

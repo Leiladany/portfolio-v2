@@ -7,7 +7,8 @@ import { projects } from "../data/projects";
 import { skillGroups } from "../data/skills";
 import { useDocumentMeta } from "../hooks/useDocumentMeta";
 
-const designSkills = skillGroups.find((group) => group.id === "design")?.items ?? [];
+const designSkills =
+  skillGroups.find((group) => group.id === "design")?.items ?? [];
 const frontendSkills =
   skillGroups.find((group) => group.id === "frontend")?.items ?? [];
 
@@ -22,7 +23,7 @@ export function HomePage() {
 
   return (
     <SiteLayout>
-      <section className="relative pb-28 pt-28 sm:pb-40 sm:pt-40">
+      <section className="relative pb-28 pt-20 sm:pb-40 sm:pt-40">
         <div className="mx-auto max-w-5xl px-6 sm:px-8">
           <h1 className="font-display reveal max-w-4xl text-6xl leading-none text-charcoal sm:text-7xl lg:text-8xl">
             Hi, I'm <span className="text-rose">{profileInfo.fullName}</span>
@@ -33,12 +34,12 @@ export function HomePage() {
             className="reveal mt-8 flex flex-wrap items-center gap-x-5 gap-y-3"
             data-delay="160"
           >
-            <p className="font-display text-3xl text-graphite sm:text-4xl">
+            <p className="text-2xl font-medium leading-tight text-graphite sm:text-3xl">
               {profileInfo.title}
             </p>
             <span className="inline-flex items-center gap-2 rounded-full border border-blush bg-blush-soft px-4 py-2 text-sm text-rose-deep">
               <Sparkles className="h-4 w-4 shrink-0" />
-              <span className="font-medium whitespace-nowrap">
+              <span className="whitespace-nowrap font-medium">
                 Open to junior roles
               </span>
             </span>
@@ -48,9 +49,8 @@ export function HomePage() {
             className="reveal mt-8 max-w-2xl text-lg leading-relaxed text-graphite sm:text-xl"
             data-delay="220"
           >
-            I design and build soft, clear and user-friendly digital
-            experiences - with care for the small details that make products
-            feel kind.
+            I design and build soft, clear and user-friendly digital experiences
+            - with care for the small details that make products feel kind.
           </p>
 
           <div className="reveal mt-10 flex flex-wrap gap-3" data-delay="280">
@@ -76,9 +76,9 @@ export function HomePage() {
             </div>
             <Link
               to="/projects"
-              className="link-underline hidden items-center gap-1.5 text-sm font-medium text-charcoal transition-colors hover:text-rose-deep sm:inline-flex"
+              className="link-underline hidden items-center gap-1.5 text-sm font-medium text-charcoal transition-colors duration-300 hover:text-rose-deep sm:inline-flex"
             >
-              See all <ArrowRight className="h-4 w-4" />
+              See all <ArrowRight className="h-4 w-4 shrink-0" />
             </Link>
           </div>
           <div className="grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
@@ -100,9 +100,9 @@ export function HomePage() {
             </div>
             <Link
               to="/about"
-              className="link-underline hidden items-center gap-1.5 text-sm font-medium text-charcoal transition-colors hover:text-rose-deep sm:inline-flex"
+              className="link-underline hidden items-center gap-1.5 text-sm font-medium text-charcoal transition-colors duration-300 hover:text-rose-deep sm:inline-flex"
             >
-              More about me <ArrowRight className="h-4 w-4" />
+              More about me <ArrowRight className="h-4 w-4 shrink-0" />
             </Link>
           </div>
           <div
@@ -117,7 +117,10 @@ export function HomePage() {
                 </span>
               ))}
             </div>
-            <span className="hidden h-8 w-px bg-blush-soft sm:block" aria-hidden />
+            <span
+              className="hidden h-8 w-px bg-blush-soft sm:block"
+              aria-hidden
+            />
             <span className="eyebrow text-charcoal">Frontend</span>
             <div className="flex min-w-[200px] flex-1 flex-wrap gap-2">
               {frontendSkills.slice(0, 5).map((skill) => (
@@ -142,7 +145,10 @@ export function HomePage() {
               keep learning, contribute to real products, and grow with a team.
             </p>
             <div className="mt-9 flex justify-center">
-              <a href="mailto:leiladany16@gmail.com" className="pill pill-primary">
+              <a
+                href="mailto:leiladany16@gmail.com"
+                className="pill pill-primary"
+              >
                 <Mail className="h-4 w-4" /> Get in touch
               </a>
             </div>

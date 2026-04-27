@@ -40,18 +40,18 @@ export function ProjectDetailPage() {
 
   return (
     <SiteLayout>
-      <section className="pb-10 pt-16 sm:pt-20">
+      <section className="pb-10 pt-8 sm:pt-28">
         <div className="mx-auto max-w-5xl px-6 sm:px-8">
           <Link
             to="/projects"
-            className="link-underline mb-10 inline-flex items-center gap-2 text-sm text-graphite transition-colors hover:text-charcoal"
+            className="link-underline inline-flex items-center gap-2 text-sm text-graphite transition-colors duration-300 hover:text-charcoal"
           >
-            <ArrowLeft className="h-4 w-4" />
+            <ArrowLeft className="h-4 w-4 shrink-0" />
             <span>All projects</span>
           </Link>
 
           <div className="reveal">
-            <h1 className="font-display max-w-3xl text-4xl leading-tight text-charcoal sm:text-5xl lg:text-6xl">
+            <h1 className="font-display max-w-3xl text-4xl mt-5 leading-tight text-charcoal sm:text-5xl lg:text-6xl">
               {project.title}
             </h1>
             <p className="mt-5 max-w-2xl text-lg leading-relaxed text-graphite sm:text-xl">
@@ -132,7 +132,10 @@ export function ProjectDetailPage() {
               label="02 - Problem"
               paragraphs={project.story.problem}
             />
-            <ProjectStorySection label="03 - Goal" paragraphs={project.story.goal} />
+            <ProjectStorySection
+              label="03 - Goal"
+              paragraphs={project.story.goal}
+            />
             <ProjectStorySection
               label="04 - Design decisions"
               paragraphs={project.story.designDecisions}

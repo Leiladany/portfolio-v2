@@ -1,4 +1,4 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import type { Project } from "../data/types";
 
@@ -28,7 +28,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       </div>
       <div className="flex flex-1 flex-col gap-3 px-7 pb-7 pt-1">
         <div>
-          <h3 className="font-display mb-2 text-2xl text-charcoal transition-colors group-hover:text-rose-deep">
+          <h3 className="font-display mb-2 text-2xl text-charcoal transition-colors duration-300 group-hover:text-rose-deep">
             {project.title}
           </h3>
           <p className="text-[15px] leading-relaxed text-graphite">
@@ -39,8 +39,8 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           <span className="link-underline text-sm font-medium text-charcoal">
             View case study
           </span>
-          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blush transition-transform duration-300 group-hover:scale-110">
-            <ArrowUpRight className="h-4 w-4 text-rose-deep transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          <span className="flex h-10 w-10 items-center justify-center rounded-full bg-blush">
+            <ArrowRight className="h-4 w-4 text-rose-deep" />
           </span>
         </div>
       </div>

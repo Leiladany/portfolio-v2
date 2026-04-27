@@ -4,7 +4,8 @@ import { profileInfo } from "../data/profile";
 import { skillGroups } from "../data/skills";
 import { useDocumentMeta } from "../hooks/useDocumentMeta";
 
-const designSkills = skillGroups.find((group) => group.id === "design")?.items ?? [];
+const designSkills =
+  skillGroups.find((group) => group.id === "design")?.items ?? [];
 const frontendSkills =
   skillGroups.find((group) => group.id === "frontend")?.items ?? [];
 
@@ -17,7 +18,7 @@ export function AboutPage() {
 
   return (
     <SiteLayout>
-      <section className="pb-12 pt-24 sm:pt-32">
+      <section className="pb-12 pt-24 sm:pt-28">
         <div className="mx-auto max-w-5xl px-6 sm:px-8">
           <p className="eyebrow reveal">About</p>
           <h1 className="font-display reveal mt-5 text-5xl leading-none text-charcoal sm:text-6xl lg:text-7xl">
@@ -31,7 +32,10 @@ export function AboutPage() {
       <section className="pb-10">
         <div className="mx-auto max-w-5xl px-6 sm:px-8">
           <div className="reveal flex w-full flex-wrap items-center gap-3 rounded-[1.75rem] border border-blush bg-blush-soft px-7 py-5 text-base text-charcoal">
-            <span className="h-2.5 w-2.5 shrink-0 rounded-full bg-rose" aria-hidden />
+            <span
+              className="h-2.5 w-2.5 shrink-0 rounded-full bg-rose"
+              aria-hidden
+            />
             <span className="font-medium">Currently</span>
             <span className="text-graphite">
               Looking for my first junior role in UX/UI and frontend - remote or
@@ -44,7 +48,10 @@ export function AboutPage() {
       <section className="pb-16">
         <div className="reveal mx-auto max-w-5xl space-y-6 px-6 sm:px-8">
           {profileInfo.aboutParagraphs.slice(0, 2).map((paragraph) => (
-            <p key={paragraph} className="text-xl leading-relaxed text-graphite">
+            <p
+              key={paragraph}
+              className="text-xl leading-relaxed text-graphite"
+            >
               {paragraph}
             </p>
           ))}
@@ -99,8 +106,8 @@ export function AboutPage() {
                 Bringing designs to life in the browser.
               </h3>
               <p className="mb-6 text-base leading-relaxed text-graphite">
-                Building responsive, accessible, component-based interfaces
-                with React and modern CSS - close to design and kind to users.
+                Building responsive, accessible, component-based interfaces with
+                React and modern CSS - close to design and kind to users.
               </p>
               <div className="flex flex-wrap gap-2">
                 {frontendSkills.map((skill) => (
@@ -113,7 +120,10 @@ export function AboutPage() {
           </div>
 
           <div className="reveal mt-14 flex flex-wrap gap-3">
-            <a href="mailto:leiladany16@gmail.com" className="pill pill-primary">
+            <a
+              href="mailto:leiladany16@gmail.com"
+              className="pill pill-primary"
+            >
               <Mail className="h-4 w-4" /> Let's talk
             </a>
             <a

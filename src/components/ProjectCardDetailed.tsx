@@ -36,7 +36,7 @@ export function ProjectCardDetailed({
 
       <div className="flex flex-1 flex-col gap-5 px-8 pb-8 pt-2">
         <div className="flex items-center gap-3 text-xs">
-          <span className="font-mono uppercase text-rose-deep">
+          <span className="font-semibold uppercase text-rose-deep">
             {getProjectType(project)}
           </span>
           <span className="text-graphite">&middot;</span>
@@ -44,7 +44,7 @@ export function ProjectCardDetailed({
         </div>
 
         <div>
-          <h3 className="font-display mb-3 text-[1.7rem] text-charcoal transition-colors group-hover:text-rose-deep sm:text-3xl">
+          <h3 className="font-display mb-3 text-[1.7rem] text-charcoal transition-colors duration-300 group-hover:text-rose-deep sm:text-3xl">
             {project.title}
           </h3>
           <p className="text-[15px] leading-relaxed text-graphite sm:text-base">
@@ -64,8 +64,8 @@ export function ProjectCardDetailed({
           <span className="link-underline text-[15px] font-medium text-charcoal">
             Read the case study
           </span>
-          <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-blush transition-transform duration-300 group-hover:scale-110">
-            <ArrowRight className="h-4 w-4 text-rose-deep transition-transform duration-300 group-hover:translate-x-0.5" />
+          <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-blush">
+            <ArrowRight className="h-4 w-4 text-rose-deep" />
           </span>
         </div>
       </div>

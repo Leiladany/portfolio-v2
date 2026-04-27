@@ -50,7 +50,7 @@ function Header() {
               end={link.end}
               className={({ isActive }) =>
                 [
-                  "nav-link rounded-full px-3 py-2 text-sm text-graphite hover:bg-blush/60 hover:text-charcoal sm:px-4",
+                  "nav-link rounded-full px-3 py-2 text-sm font-medium text-graphite hover:bg-blush/60 hover:text-charcoal sm:px-4",
                   isActive ? "bg-blush text-charcoal" : "",
                 ].join(" ")
               }
@@ -76,7 +76,7 @@ function Footer() {
           {profileInfo.socials.map((social) => (
             <a
               key={social.platform}
-              className="link-underline text-graphite transition-colors hover:text-charcoal"
+              className="link-underline text-graphite transition-colors duration-300 hover:text-charcoal"
               href={social.href}
               target={social.href.startsWith("http") ? "_blank" : undefined}
               rel={social.href.startsWith("http") ? "noreferrer" : undefined}

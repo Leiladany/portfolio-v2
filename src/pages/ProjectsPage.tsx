@@ -12,7 +12,7 @@ export function ProjectsPage() {
 
   return (
     <SiteLayout>
-      <section className="pb-16 pt-24 sm:pt-32">
+      <section className="pb-16 pt-8 sm:pt-28">
         <div className="mx-auto max-w-5xl px-6 sm:px-8">
           <p className="eyebrow reveal">Case studies</p>
           <h1 className="font-display reveal mt-5 text-5xl leading-none text-charcoal sm:text-6xl lg:text-7xl">

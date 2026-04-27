@@ -34,7 +34,7 @@ export function HomePage() {
         }
         subheading={
           <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
-            <p className="text-graphite text-2xl leading-tight font-medium sm:text-3xl">
+            <p className="text-graphite text-xl leading-tight font-medium sm:text-3xl">
               {profileInfo.title}
             </p>
             <span className="border-blush bg-blush-soft text-rose-deep inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm">
@@ -64,12 +64,12 @@ export function HomePage() {
         }
       />
 
-      <section className="py-20 sm:py-28">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8">
+      <section className="py-14 sm:py-28">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8">
           <div className="reveal mb-12 flex items-end justify-between gap-4">
             <div>
               <p className="eyebrow mb-3">Selected work</p>
-              <h2 className="font-display text-charcoal text-4xl sm:text-5xl">
+              <h2 className="font-display text-charcoal text-3xl sm:text-5xl">
                 Featured projects
               </h2>
             </div>
@@ -88,12 +88,12 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="py-20 sm:py-28">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8">
+      <section className="py-14 sm:py-28">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8">
           <div className="reveal mb-10 flex flex-wrap items-end justify-between gap-4">
             <div className="max-w-xl">
               <p className="eyebrow mb-3">Toolbox preview</p>
-              <h2 className="font-display text-charcoal text-4xl sm:text-5xl">
+              <h2 className="font-display text-charcoal text-3xl sm:text-5xl">
                 Tools I love working with
               </h2>
             </div>
@@ -105,7 +105,7 @@ export function HomePage() {
             </Link>
           </div>
           <div
-            className="reveal border-blush-soft shadow-soft grid gap-7 rounded-[2rem] border bg-white p-7 sm:p-9 md:grid-cols-2"
+            className="reveal border-blush-soft shadow-soft grid gap-6 rounded-[2rem] border bg-white p-5 sm:gap-7 sm:p-9 md:grid-cols-2"
             data-delay="80"
           >
             <div>
@@ -132,14 +132,14 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="py-24 sm:py-32">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8">
-          <div className="reveal border-blush bg-blush-soft rounded-[2rem] border p-10 text-center sm:p-16">
+      <section className="py-16 sm:py-32">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8">
+          <div className="reveal border-blush bg-blush-soft rounded-[2rem] border p-6 text-center sm:p-16">
             <p className="eyebrow mb-4">Let's chat</p>
-            <h2 className="font-display text-charcoal text-4xl leading-tight sm:text-5xl">
+            <h2 className="font-display text-charcoal text-3xl leading-tight sm:text-5xl">
               Open to junior opportunities.
             </h2>
-            <p className="text-graphite mx-auto mt-6 max-w-xl text-lg leading-relaxed sm:text-xl">
+            <p className="text-graphite mx-auto mt-5 max-w-xl text-base leading-relaxed sm:mt-6 sm:text-xl">
               I'm open to junior UX/UI and frontend opportunities where I can
               keep learning, contribute to real products, and grow with a team.
             </p>

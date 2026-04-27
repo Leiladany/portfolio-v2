@@ -30,8 +30,8 @@ export function ProjectsPage() {
         }
       />
 
-      <section className="pb-32">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8">
+      <section className="pb-20 sm:pb-32">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8">
           <div className="grid gap-8 md:grid-cols-2">
             {projects.map((project, index) => (
               <ProjectCardDetailed

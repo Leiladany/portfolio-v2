@@ -77,8 +77,8 @@ export function ContactPage() {
         }
       />
 
-      <section className="pb-24">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8">
+      <section className="pb-16 sm:pb-24">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8">
           <div className="grid gap-5 sm:grid-cols-2">
             {contactLinks.map((link, index) => (
               <a
@@ -86,7 +86,7 @@ export function ContactPage() {
                 href={link.href}
                 target={link.href.startsWith("http") ? "_blank" : undefined}
                 rel={link.href.startsWith("http") ? "noreferrer" : undefined}
-                className="soft-card group reveal flex items-center gap-5 p-7"
+                className="soft-card group reveal flex items-center gap-4 p-5 sm:gap-5 sm:p-7"
                 data-delay={index * 70}
               >
                 <span className="bg-blush flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl">

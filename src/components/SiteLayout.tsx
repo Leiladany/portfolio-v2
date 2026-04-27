@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { NavbarMenu } from "./NavbarMenu";
 import { profileInfo } from "../data/profile";
 import { useReveal } from "../hooks/useReveal";
 
@@ -28,8 +29,8 @@ export function SiteLayout({ children }: SiteLayoutProps) {
 
 function Header() {
   return (
-    <header className="border-stone/60 bg-background/80 sticky top-0 z-40 border-b backdrop-blur-md">
-      <div className="mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-5 sm:px-8">
+    <header className="border-stone/60 bg-background/80 sticky top-0 z-50 border-b backdrop-blur-md transition-colors duration-300">
+      <div className="relative z-50 mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4 sm:px-8">
         <Link to="/" className="flex shrink-0 items-center gap-2">
           <span
             className="h-7 w-7 rounded-full"
@@ -40,11 +41,11 @@ function Header() {
             aria-hidden
           />
           <span className="font-display text-lg">
-            {profileInfo.firstName} T.
+            {profileInfo.firstName} {profileInfo.lastName}
           </span>
         </Link>
 
-        <nav className="flex min-w-0 items-center gap-1 overflow-x-auto">
+        <nav className="hidden min-w-0 items-center gap-1 overflow-x-auto sm:flex">
           {navLinks.map((link) => (
             <NavLink
               key={link.to}
@@ -61,6 +62,8 @@ function Header() {
             </NavLink>
           ))}
         </nav>
+
+        <NavbarMenu links={navLinks} />
       </div>
     </header>
   );
@@ -69,9 +72,9 @@ function Header() {
 function Footer() {
   return (
     <footer className="border-stone/60 relative z-10 mt-24 border-t">
-      <div className="text-graphite mx-auto flex max-w-5xl flex-col items-start justify-between gap-4 px-6 py-10 text-sm sm:flex-row sm:items-center sm:px-8">
+      <div className="text-graphite mx-auto flex max-w-5xl flex-col items-start justify-between gap-4 px-4 py-8 text-sm sm:flex-row sm:items-center sm:px-8 sm:py-10">
         <p>
-          &copy; {new Date().getFullYear()} {profileInfo.fullName} - Designed
+          &copy; {new Date().getFullYear()} {profileInfo.fullName} - designed
           and built with care.
         </p>
         <div className="flex flex-wrap gap-6">

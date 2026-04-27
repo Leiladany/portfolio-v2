@@ -28,9 +28,9 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
         />
       </div>
-      <div className="flex flex-1 flex-col gap-3 px-7 pt-1 pb-7">
+      <div className="flex flex-1 flex-col gap-3 px-5 pt-1 pb-6 sm:px-7 sm:pb-7">
         <div>
-          <h3 className="font-display text-charcoal mb-2 text-2xl transition-colors duration-300">
+          <h3 className="font-display text-charcoal mb-2 text-xl transition-colors duration-300 sm:text-2xl">
             {project.title}
           </h3>
           <p className="text-graphite text-[15px] leading-relaxed">

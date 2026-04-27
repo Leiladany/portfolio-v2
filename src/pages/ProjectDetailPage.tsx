@@ -95,9 +95,9 @@ export function ProjectDetailPage() {
         }
       />
 
-      <section className="py-10">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8">
-          <div className="reveal border-blush bg-blush-soft overflow-hidden rounded-[2rem] border">
+      <section className="py-7 sm:py-10">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8">
+          <div className="reveal border-blush bg-blush-soft overflow-hidden rounded-4xl border">
             <img
               src={image.src}
               alt={image.alt}
@@ -106,20 +106,17 @@ export function ProjectDetailPage() {
               className="h-auto w-full object-cover"
             />
           </div>
-          {image.caption ? (
-            <p className="text-graphite mt-3 text-sm">{image.caption}</p>
-          ) : null}
         </div>
       </section>
 
-      <section className="py-10">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8">
+      <section className="py-7 sm:py-10">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8">
           <div className="reveal grid gap-6 sm:grid-cols-3">
-            <div className="soft-card p-6 sm:col-span-1">
+            <div className="soft-card p-5 sm:col-span-1 sm:p-6">
               <p className="eyebrow mb-2">Focus</p>
               <p className="text-charcoal">{projectFocus}</p>
             </div>
-            <div className="soft-card p-6 sm:col-span-2">
+            <div className="soft-card p-5 sm:col-span-2 sm:p-6">
               <p className="eyebrow mb-3">Stack</p>
               <div className="flex flex-wrap gap-1.5">
                 {project.stack.map((skill) => (
@@ -133,8 +130,8 @@ export function ProjectDetailPage() {
         </div>
       </section>
 
-      <section className="py-12">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8">
+      <section className="py-8 sm:py-12">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8">
           <div className="space-y-12">
             <ProjectStorySection
               label="01 - Overview"
@@ -161,8 +158,8 @@ export function ProjectDetailPage() {
       </section>
 
       {nextProject ? (
-        <section className="pt-10 pb-16">
-          <div className="mx-auto max-w-5xl px-6 sm:px-8">
+        <section className="pt-8 pb-12 sm:pt-10 sm:pb-16">
+          <div className="mx-auto max-w-5xl px-4 sm:px-8">
             <div className="border-stone border-t pt-8">
               <Link
                 to={`/projects/${nextProject.id}`}

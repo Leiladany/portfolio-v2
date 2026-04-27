@@ -11,8 +11,6 @@ const projectEntries = [
       {
         src: "/projects/playitbetter.png",
         alt: "Landing page preview of Play It Better: Summer School.",
-        caption:
-          "A bright, education-focused interface built to keep the experience approachable for younger users.",
       },
     ],
     stack: ["React", "JavaScript", "Material UI", "CSS", "EmailJS"],
@@ -64,8 +62,6 @@ const projectEntries = [
       {
         src: "/projects/empowered.png",
         alt: "Homepage preview of the Empowered platform.",
-        caption:
-          "The platform is designed around content clarity and a welcoming visual presentation.",
       },
     ],
     stack: [
@@ -125,8 +121,6 @@ const projectEntries = [
       {
         src: "/projects/pawsitive.png",
         alt: "Dashboard preview of the Pawsitive Pets web app.",
-        caption:
-          "The interface keeps pet-related information organized through a straightforward management flow.",
       },
     ],
     stack: [
@@ -185,8 +179,6 @@ const projectEntries = [
       {
         src: "/projects/westview.png",
         alt: "Gameplay screenshot from the Escaping Westview browser game.",
-        caption:
-          "The main gameplay view focuses on quick movement, timing, and visual feedback.",
       },
     ],
     stack: ["HTML", "CSS", "JavaScript", "Canvas"],

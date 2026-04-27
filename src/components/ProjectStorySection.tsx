@@ -12,7 +12,7 @@ export function ProjectStorySection({
       <p className="eyebrow mb-3">{label}</p>
       <div className="space-y-4">
         {paragraphs.map((paragraph) => (
-          <p key={paragraph} className="text-graphite text-lg leading-relaxed">
+          <p key={paragraph} className="text-graphite text-base leading-relaxed sm:text-lg">
             {paragraph}
           </p>
         ))}

@@ -25,7 +25,6 @@ export type SkillGroup = {
 export type ProjectImage = {
   src: string;
   alt: string;
-  caption?: string;
 };
 
 export type ProjectFact = {

@@ -30,28 +30,27 @@ export function AboutPage() {
         }
       />
 
-      <section className="pb-10">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8">
-          <div className="reveal border-blush bg-blush-soft text-charcoal flex w-full flex-wrap items-center gap-3 rounded-[1.75rem] border px-5 py-3 text-base">
+      <section className="pb-8 sm:pb-10">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8">
+          <div className="reveal border-blush bg-blush-soft text-charcoal flex w-full items-center gap-3 rounded-xl border px-5 py-3 text-xs sm:text-base">
             <span
               className="bg-rose h-2.5 w-2.5 shrink-0 rounded-full"
               aria-hidden
             />
-            <span className="font-medium">Currently</span>
             <span className="text-graphite">
-              Looking for my first junior role in UX/UI and frontend - remote or
-              Lisbon.
+              <strong>Currently</strong> looking for my first junior role in
+              UX/UI and frontend - remote or Lisbon.
             </span>
           </div>
         </div>
       </section>
 
-      <section className="pb-16">
-        <div className="reveal mx-auto max-w-5xl space-y-6 px-6 sm:px-8">
+      <section className="pb-10 sm:pb-16">
+        <div className="reveal mx-auto max-w-5xl space-y-4 px-4 sm:space-y-6 sm:px-8">
           {profileInfo.aboutParagraphs.slice(0, 2).map((paragraph) => (
             <p
               key={paragraph}
-              className="text-graphite text-xl leading-relaxed"
+              className="text-graphite text-base leading-relaxed sm:text-xl"
             >
               {paragraph}
             </p>
@@ -59,28 +58,28 @@ export function AboutPage() {
         </div>
       </section>
 
-      <section className="py-16">
-        <div className="mx-auto max-w-5xl px-6 sm:px-8">
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto max-w-5xl px-4 sm:px-8">
           <div className="reveal mb-12 max-w-xl">
             <p className="eyebrow mb-3">Skills and tools</p>
-            <h2 className="font-display text-charcoal text-4xl sm:text-5xl">
+            <h2 className="font-display text-charcoal text-3xl sm:text-5xl">
               What I work with
             </h2>
-            <p className="text-graphite mt-5 text-lg leading-relaxed">
+            <p className="text-graphite mt-4 text-base leading-relaxed sm:mt-5 sm:text-lg">
               A mix of design and frontend tools I have used across student
               projects, bootcamp work, and personal projects.
             </p>
           </div>
 
           <div className="grid gap-7 md:grid-cols-2">
-            <div className="soft-card reveal p-8 sm:p-10">
+            <div className="soft-card reveal p-6 sm:p-10">
               <div className="mb-2 flex items-center gap-3">
                 <span className="bg-blush inline-flex h-11 w-11 items-center justify-center rounded-2xl">
                   <Palette className="text-rose-deep h-5 w-5" />
                 </span>
                 <p className="eyebrow text-charcoal">Design</p>
               </div>
-              <h3 className="font-display text-charcoal mt-3 mb-3 text-2xl">
+              <h3 className="font-display text-charcoal mt-3 mb-3 text-xl sm:text-2xl">
                 Crafting calm, considered interfaces.
               </h3>
               <p className="text-graphite mb-6 text-base leading-relaxed">
@@ -96,14 +95,14 @@ export function AboutPage() {
               </div>
             </div>
 
-            <div className="soft-card reveal p-8 sm:p-10" data-delay="80">
+            <div className="soft-card reveal p-6 sm:p-10" data-delay="80">
               <div className="mb-2 flex items-center gap-3">
                 <span className="bg-blush inline-flex h-11 w-11 items-center justify-center rounded-2xl">
                   <Code2 className="text-rose-deep h-5 w-5" />
                 </span>
                 <p className="eyebrow text-charcoal">Frontend</p>
               </div>
-              <h3 className="font-display text-charcoal mt-3 mb-3 text-2xl">
+              <h3 className="font-display text-charcoal mt-3 mb-3 text-xl sm:text-2xl">
                 Bringing designs to life in the browser.
               </h3>
               <p className="text-graphite mb-6 text-base leading-relaxed">

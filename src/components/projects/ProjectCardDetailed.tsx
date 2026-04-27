@@ -1,17 +1,12 @@
 import { Link, useLocation } from "react-router-dom";
-import { AnimatedArrow } from "./AnimatedArrow";
-import type { Project } from "../data/types";
+import { AnimatedArrow } from "../common/AnimatedArrow";
+import type { Project } from "../../data/types";
+import { getProjectType } from "../../utils/projectUtils";
 
 type ProjectCardDetailedProps = {
   project: Project;
   index?: number;
 };
-
-function getProjectType(project: Project) {
-  return (
-    project.facts.find((fact) => fact.label === "Type")?.value ?? "Project"
-  );
-}
 
 export function ProjectCardDetailed({
   project,

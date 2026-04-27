@@ -1,0 +1,54 @@
+@layer utilities {
+  .soft-card {
+    border: 1px solid oklch(0.96 0.018 12);
+    border-radius: var(--radius-2xl);
+    background: white;
+    box-shadow: var(--shadow-soft);
+    transition:
+      border-color 0.3s ease,
+      box-shadow var(--motion-shadow),
+      transform var(--motion-hover);
+  }
+
+  .soft-card:hover {
+    border-color: var(--blush);
+    box-shadow: var(--shadow-pink-glow);
+    transform: translateY(-3px);
+  }
+
+  .project-card {
+    overflow: hidden;
+    border: 1px solid oklch(0.95 0.022 12);
+    border-radius: var(--radius-2xl);
+    background: linear-gradient(180deg, #ffffff 0%, var(--blush-soft) 100%);
+    box-shadow: var(--shadow-soft);
+    transition:
+      border-color 0.3s ease,
+      box-shadow var(--motion-shadow),
+      transform var(--motion-hover);
+  }
+
+  .project-card:hover {
+    border-color: var(--blush);
+    box-shadow: var(--shadow-pink-glow);
+    transform: translateY(-4px);
+  }
+
+  .project-card-detailed {
+    overflow: hidden;
+    border: 1px solid oklch(0.94 0.024 12);
+    border-radius: var(--radius-2xl);
+    background: white;
+    box-shadow: var(--shadow-soft);
+    transition:
+      border-color 0.3s ease,
+      box-shadow var(--motion-shadow),
+      transform var(--motion-hover);
+  }
+
+  .project-card-detailed:hover {
+    border-color: var(--blush);
+    box-shadow: var(--shadow-pink-glow);
+    transform: translateY(-5px);
+  }
+}

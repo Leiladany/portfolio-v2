@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
-import { AnimatedArrow } from "./AnimatedArrow";
-import type { Project } from "../data/types";
+import { AnimatedArrow } from "../common/AnimatedArrow";
+import type { Project } from "../../data/types";
 
 type ProjectCardProps = {
   project: Project;

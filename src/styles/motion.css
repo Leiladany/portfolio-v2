@@ -1,0 +1,150 @@
+@layer utilities {
+  .animated-arrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .animated-arrow svg {
+    transform: translate(0, 0);
+  }
+
+  a:hover .animated-arrow-right svg,
+  button:hover .animated-arrow-right svg,
+  .group:hover .animated-arrow-right svg {
+    animation: arrow-motion-right var(--motion-arrow);
+  }
+
+  a:hover .animated-arrow-left svg,
+  button:hover .animated-arrow-left svg,
+  .group:hover .animated-arrow-left svg {
+    animation: arrow-motion-left var(--motion-arrow);
+  }
+
+  a:hover .animated-arrow-external svg,
+  button:hover .animated-arrow-external svg,
+  .group:hover .animated-arrow-external svg {
+    animation: arrow-motion-external var(--motion-arrow);
+  }
+
+  .reveal {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(18px);
+    transition:
+      background-color 300ms ease,
+      border-color 300ms ease,
+      box-shadow var(--motion-shadow),
+      color 300ms ease,
+      opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+      filter 700ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.is-visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+
+  .reveal.is-visible.soft-card:hover,
+  .reveal.is-visible.project-card:hover,
+  .reveal.is-visible.project-card-detailed:hover {
+    transition:
+      border-color 360ms ease,
+      box-shadow 720ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 360ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+@keyframes arrow-motion-right {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  38% {
+    opacity: 0;
+    transform: translateX(70%);
+  }
+  39% {
+    opacity: 0;
+    transform: translateX(-70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes arrow-motion-left {
+  0% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  38% {
+    opacity: 0;
+    transform: translateX(-70%);
+  }
+  39% {
+    opacity: 0;
+    transform: translateX(70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes arrow-motion-external {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+  38% {
+    opacity: 0;
+    transform: translate(60%, -60%);
+  }
+  39% {
+    opacity: 0;
+    transform: translate(-60%, 60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes mobile-menu-enter {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    filter: none;
+    transform: none;
+  }
+
+  .animated-arrow svg {
+    animation: none !important;
+  }
+}

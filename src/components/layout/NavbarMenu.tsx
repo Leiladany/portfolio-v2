@@ -1,16 +1,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { Link, NavLink } from "react-router-dom";
-import { profileInfo } from "../data/profile";
-
-type NavLinkItem = {
-  to: string;
-  label: string;
-  end: boolean;
-};
+import { NavLink } from "react-router-dom";
+import { BrandLink } from "./BrandLink";
+import type { NavigationLink } from "./navigation";
 
 type NavbarMenuProps = {
-  links: readonly NavLinkItem[];
+  links: readonly NavigationLink[];
 };
 
 export function NavbarMenu({ links }: NavbarMenuProps) {
@@ -77,23 +72,7 @@ export function NavbarMenu({ links }: NavbarMenuProps) {
               aria-modal="true"
             >
               <div className="mx-auto flex h-16 max-w-5xl items-center justify-between gap-4 px-4">
-                <Link
-                  to="/"
-                  className="flex shrink-0 items-center gap-2"
-                  onClick={closeMenu}
-                >
-                  <span
-                    className="h-7 w-7 rounded-full"
-                    style={{
-                      background:
-                        "radial-gradient(circle at 30% 30%, var(--rose), var(--blush))",
-                    }}
-                    aria-hidden
-                  />
-                  <span className="font-display text-lg">
-                    {profileInfo.firstName} T.
-                  </span>
-                </Link>
+                <BrandLink compact onClick={closeMenu} />
 
                 <button
                   ref={closeButtonRef}

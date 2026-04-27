@@ -1,16 +1,9 @@
-import { PageIntro } from "../components/PageIntro";
-import { ProjectCardDetailed } from "../components/ProjectCardDetailed";
-import { SiteLayout } from "../components/SiteLayout";
+import { PageIntro } from "../components/common/PageIntro";
+import { SiteLayout } from "../components/layout/SiteLayout";
+import { ProjectsGrid } from "../components/projects/ProjectsGrid";
 import { projects } from "../data/projects";
-import { useDocumentMeta } from "../hooks/useDocumentMeta";
 
 export function ProjectsPage() {
-  useDocumentMeta({
-    title: "Projects - Leila Teixeira",
-    description:
-      "A small selection of UX/UI and frontend case studies by Leila Teixeira.",
-  });
-
   return (
     <SiteLayout>
       <PageIntro
@@ -30,19 +23,7 @@ export function ProjectsPage() {
         }
       />
 
-      <section className="pb-20 sm:pb-32">
-        <div className="mx-auto max-w-5xl px-4 sm:px-8">
-          <div className="grid gap-8 md:grid-cols-2">
-            {projects.map((project, index) => (
-              <ProjectCardDetailed
-                key={project.id}
-                project={project}
-                index={index}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProjectsGrid projects={projects} />
     </SiteLayout>
   );
 }

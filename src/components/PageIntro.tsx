@@ -20,7 +20,7 @@ export function PageIntro({
   const titleMargin = eyebrow ? "mt-5" : "mt-0";
 
   return (
-    <section className="pt-10 pb-7 sm:pt-28 sm:pb-14 lg:pt-32">
+    <section className="pt-10 pb-7 sm:pt-24 sm:pb-14 lg:pt-28">
       <div className="mx-auto max-w-5xl px-4 sm:px-8">
         {before ? <div className="reveal mb-5">{before}</div> : null}
         {eyebrow ? <p className="eyebrow reveal">{eyebrow}</p> : null}
@@ -46,7 +46,10 @@ export function PageIntro({
           </p>
         ) : null}
         {actions ? (
-          <div className="reveal mt-7 flex flex-wrap gap-3 sm:mt-9" data-delay="220">
+          <div
+            className="reveal mt-7 flex flex-wrap gap-3 sm:mt-9"
+            data-delay="220"
+          >
             {actions}
           </div>
         ) : null}

@@ -15,12 +15,12 @@ export function HomeHero() {
       }
       subheading={
         <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
-          <p className="text-graphite text-xl leading-tight font-medium sm:text-3xl">
+          <p className="text-graphite font-display text-xl leading-tight italic sm:text-3xl">
             {profileInfo.title}
           </p>
-          <span className="border-blush bg-blush-soft text-rose-deep inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm">
+          <span className="border-blush bg-blush-soft text-rose-deep inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-xs">
             <Sparkles className="h-4 w-4 shrink-0" />
-            <span className="font-medium whitespace-nowrap">
+            <span className="font-light whitespace-nowrap">
               Open to junior roles
             </span>
           </span>

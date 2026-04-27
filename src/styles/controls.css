@@ -1,0 +1,86 @@
+@layer utilities {
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: var(--radius-pill);
+    padding: 0.7rem 1.2rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition:
+      transform var(--motion-hover),
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow var(--motion-shadow),
+      color 0.3s ease;
+  }
+
+  .pill:hover {
+    transform: translateY(-2px);
+  }
+
+  .pill:active {
+    transform: translateY(0) scale(0.98);
+  }
+
+  .pill-primary {
+    background: var(--charcoal);
+    box-shadow: var(--shadow-soft);
+    color: white;
+  }
+
+  .pill-primary:hover {
+    background: var(--rose-deep);
+    box-shadow: var(--shadow-soft-lg);
+  }
+
+  .pill-rose {
+    background: var(--rose);
+    box-shadow: var(--shadow-soft);
+    color: white;
+  }
+
+  .pill-rose:hover {
+    background: var(--rose-deep);
+  }
+
+  .pill-ghost {
+    border: 1px solid var(--graphite);
+    background: transparent;
+    color: var(--graphite);
+  }
+
+  .pill-ghost:hover {
+    border-color: var(--blush);
+    background: var(--blush);
+  }
+
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid var(--stone);
+    border-radius: var(--radius-pill);
+    background: var(--cream);
+    color: var(--graphite);
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0;
+    padding: 0.4rem 0.85rem;
+  }
+
+  .chip-blush {
+    border-color: transparent;
+    background: var(--blush);
+    color: var(--charcoal);
+  }
+
+  @media (min-width: 640px) {
+    .pill {
+      padding: 0.75rem 1.5rem;
+      font-size: 0.95rem;
+    }
+  }
+}

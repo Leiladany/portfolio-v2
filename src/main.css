@@ -1,13 +1,9 @@
-html {
-  scroll-behavior: smooth;
-}
-
-@keyframes bounce {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(12px);
-  }
-}
+@import "tailwindcss";
+@import "./styles/theme.css";
+@import "./styles/base.css";
+@import "./styles/background.css";
+@import "./styles/typography.css";
+@import "./styles/controls.css";
+@import "./styles/cards.css";
+@import "./styles/navigation.css";
+@import "./styles/motion.css";

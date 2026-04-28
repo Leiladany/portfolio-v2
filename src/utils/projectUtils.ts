@@ -58,6 +58,23 @@ export function getNextProject(
   return allProjects[(currentProjectIndex + 1) % allProjects.length];
 }
 
+export function getPreviousProject(
+  currentProject: Project,
+  allProjects: readonly Project[],
+) {
+  const currentProjectIndex = allProjects.findIndex(
+    (project) => project.id === currentProject.id,
+  );
+
+  if (currentProjectIndex < 0 || allProjects.length <= 1) {
+    return undefined;
+  }
+
+  return allProjects[
+    (currentProjectIndex - 1 + allProjects.length) % allProjects.length
+  ];
+}
+
 export function getSafeReturnPath(value: unknown) {
   return value === "/" || value === "/projects" ? value : "/projects";
 }

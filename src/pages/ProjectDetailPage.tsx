@@ -1,7 +1,7 @@
 import { useLocation, useParams } from "react-router-dom";
-import { NextProjectLink } from "../components/project-detail/NextProjectLink";
 import { ProjectDetailHero } from "../components/project-detail/ProjectDetailHero";
-import { ProjectHeroImage } from "../components/project-detail/ProjectHeroImage";
+import { ProjectImageCarousel } from "../components/project-detail/ProjectImageCarousel";
+import { ProjectNavigationLinks } from "../components/project-detail/ProjectNavigationLinks";
 import { ProjectStoryList } from "../components/project-detail/ProjectStoryList";
 import { ProjectSummaryGrid } from "../components/project-detail/ProjectSummaryGrid";
 import { SiteLayout } from "../components/layout/SiteLayout";
@@ -9,6 +9,7 @@ import { getProjectById, projects } from "../data/projects";
 import { notFoundContent } from "../data/site";
 import {
   getNextProject,
+  getPreviousProject,
   getProjectFocus,
   getSafeReturnPath,
 } from "../utils/projectUtils";
@@ -35,18 +36,21 @@ export function ProjectDetailPage() {
   }
 
   const nextProject = getNextProject(project, projects);
+  const previousProject = getPreviousProject(project, projects);
   const projectFocus = getProjectFocus(project);
 
   return (
     <SiteLayout>
       <ProjectDetailHero project={project} returnTo={returnTo} />
-      <ProjectHeroImage image={project.images[0]} />
+      <ProjectImageCarousel key={project.id} images={project.images} />
       <ProjectSummaryGrid project={project} focus={projectFocus} />
       <ProjectStoryList project={project} />
 
-      {nextProject ? (
-        <NextProjectLink project={nextProject} returnTo={returnTo} />
-      ) : null}
+      <ProjectNavigationLinks
+        previousProject={previousProject}
+        nextProject={nextProject}
+        returnTo={returnTo}
+      />
     </SiteLayout>
   );
 }

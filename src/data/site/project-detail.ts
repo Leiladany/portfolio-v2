@@ -6,5 +6,10 @@ export const projectDetailContent: ProjectDetailContent = {
   repositoryLabel: "Repository",
   focusLabel: "Focus",
   stackLabel: "Stack",
+  previousProjectLabel: "Previous project",
   nextProjectLabel: "Next project",
+  previousImageLabel: "Previous image",
+  nextImageLabel: "Next image",
+  carouselStatusLabel: "Image",
+  carouselStatusConnector: "of",
 };

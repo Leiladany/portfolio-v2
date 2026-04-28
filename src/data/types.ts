@@ -186,7 +186,12 @@ export type ProjectDetailContent = {
   repositoryLabel: string;
   focusLabel: string;
   stackLabel: string;
+  previousProjectLabel: string;
   nextProjectLabel: string;
+  previousImageLabel: string;
+  nextImageLabel: string;
+  carouselStatusLabel: string;
+  carouselStatusConnector: string;
 };
 
 export type ContactPageContent = {

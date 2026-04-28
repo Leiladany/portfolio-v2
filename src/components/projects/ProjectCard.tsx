@@ -26,7 +26,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           width={1024}
           height={768}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
+          className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-103"
         />
       </div>
       <div className="flex flex-1 flex-col gap-3 px-5 pt-1 pb-6 sm:px-7 sm:pb-7">

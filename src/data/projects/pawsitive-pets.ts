@@ -14,6 +14,30 @@ export const pawsitivePets: Project = {
       src: "/projects/pawsitive/pawsitive-0.png",
       alt: "Dashboard preview of the Pawsitive Pets web app.",
     },
+    {
+      src: "/projects/pawsitive/pawsitive-1.png",
+      alt: "Pet overview screen from the Pawsitive Pets web app.",
+    },
+    {
+      src: "/projects/pawsitive/pawsitive-2.png",
+      alt: "Pet details screen from the Pawsitive Pets web app.",
+    },
+    {
+      src: "/projects/pawsitive/pawsitive-3.png",
+      alt: "Pet form screen from the Pawsitive Pets web app.",
+    },
+    {
+      src: "/projects/pawsitive/pawsitive-4.png",
+      alt: "Pet agenda screen from the Pawsitive Pets web app.",
+    },
+    {
+      src: "/projects/pawsitive/pawsitive-5.png",
+      alt: "Pet records screen from the Pawsitive Pets web app.",
+    },
+    {
+      src: "/projects/pawsitive/pawsitive-6.png",
+      alt: "Additional management screen from the Pawsitive Pets web app.",
+    },
   ],
   stack: ["React", "JavaScript", "Bootstrap"],
   facts: [

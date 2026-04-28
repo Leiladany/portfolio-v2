@@ -14,6 +14,22 @@ export const playItBetterSummerSchool: Project = {
       src: "/projects/playitbetter/playitbetter-0.png",
       alt: "Landing page preview of Play It Better: Summer School.",
     },
+    {
+      src: "/projects/playitbetter/playitbetter-1.png",
+      alt: "Program overview screen from Play It Better: Summer School.",
+    },
+    {
+      src: "/projects/playitbetter/playitbetter-2.png",
+      alt: "Activity details screen from Play It Better: Summer School.",
+    },
+    {
+      src: "/projects/playitbetter/playitbetter-3.png",
+      alt: "Information section from Play It Better: Summer School.",
+    },
+    {
+      src: "/projects/playitbetter/playitbetter-4.png",
+      alt: "Registration section from Play It Better: Summer School.",
+    },
   ],
   stack: ["React", "JavaScript", "Material UI", "EmailJS"],
   facts: [

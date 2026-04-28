@@ -2,10 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { AnimatedArrow } from "../common/AnimatedArrow";
 import { projectsPageContent } from "../../data/site";
 import type { Project } from "../../data/types";
-import {
-  formatProjectDateRange,
-  getProjectType,
-} from "../../utils/projectUtils";
+import { getProjectType } from "../../utils/projectUtils";
 
 type ProjectCardDetailedProps = {
   project: Project;
@@ -18,7 +15,6 @@ export function ProjectCardDetailed({
 }: ProjectCardDetailedProps) {
   const image = project.images[0];
   const location = useLocation();
-  const projectDate = formatProjectDateRange(project);
 
   return (
     <Link
@@ -34,7 +30,7 @@ export function ProjectCardDetailed({
           width={1280}
           height={800}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-[1.03]"
+          className="h-full w-full object-cover transition-transform duration-300 ease-out group-hover:scale-103"
         />
       </div>
 

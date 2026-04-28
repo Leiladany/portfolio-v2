@@ -14,6 +14,26 @@ export const empowered: Project = {
       src: "/projects/empowered/empowered-0.png",
       alt: "Homepage preview of the Empowered platform.",
     },
+    {
+      src: "/projects/empowered/empowered-1.png",
+      alt: "Topic overview screen from the Empowered platform.",
+    },
+    {
+      src: "/projects/empowered/empowered-2.png",
+      alt: "Content listing screen from the Empowered platform.",
+    },
+    {
+      src: "/projects/empowered/empowered-3.png",
+      alt: "Article detail screen from the Empowered platform.",
+    },
+    {
+      src: "/projects/empowered/empowered-4.png",
+      alt: "Educational content screen from the Empowered platform.",
+    },
+    {
+      src: "/projects/empowered/empowered-5.png",
+      alt: "Additional interface screen from the Empowered platform.",
+    },
   ],
   stack: ["React", "JavaScript", "Mantine"],
   facts: [

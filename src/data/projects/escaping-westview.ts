@@ -14,6 +14,14 @@ export const escapingWestview: Project = {
       src: "/projects/westview/westview-0.png",
       alt: "Gameplay screenshot from the Escaping Westview browser game.",
     },
+    {
+      src: "/projects/westview/westview-1.png",
+      alt: "Gameplay action screenshot from the Escaping Westview browser game.",
+    },
+    {
+      src: "/projects/westview/westview-2.png",
+      alt: "Game over screen from the Escaping Westview browser game.",
+    },
   ],
   stack: ["HTML", "CSS", "JavaScript", "Canvas"],
   facts: [

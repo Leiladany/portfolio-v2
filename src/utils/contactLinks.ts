@@ -1,7 +1,7 @@
 import type { LucideIcon } from "lucide-react";
-import { BriefcaseBusiness, Code2, FileText, Mail } from "lucide-react";
 import { profileInfo } from "../data/profile";
-import type { SocialPlatform } from "../data/types";
+import type { SocialLink } from "../data/types";
+import { getIcon } from "./icons";
 
 export type ContactLink = {
   label: string;
@@ -10,37 +10,32 @@ export type ContactLink = {
   icon: LucideIcon;
 };
 
-const socialIconMap: Record<SocialPlatform, LucideIcon> = {
-  email: Mail,
-  github: Code2,
-  linkedin: BriefcaseBusiness,
-};
-
-export function getSocialLink(platform: SocialPlatform) {
-  return profileInfo.socials.find((social) => social.platform === platform);
+export function getSocialLink(socialId: string) {
+  return profileInfo.socials.find((social) => social.id === socialId);
 }
 
 export function getContactLinks(): ContactLink[] {
-  const socialLinks = profileInfo.socials.map((social) => ({
+  const socials: readonly SocialLink[] = profileInfo.socials;
+  const socialLinks = socials.map((social) => ({
     label: social.label,
-    value: getSocialValue(social.platform, social.href),
+    value: social.value ?? getSocialValue(social.href),
     href: social.href,
-    icon: socialIconMap[social.platform],
+    icon: getIcon(social.icon),
   }));
 
   return [
     ...socialLinks,
     {
-      label: "Resume",
-      value: "Download CV (PDF)",
-      href: profileInfo.resumeHref,
-      icon: FileText,
+      label: profileInfo.resume.label,
+      value: profileInfo.resume.contactValue,
+      href: profileInfo.resume.href,
+      icon: getIcon("fileText"),
     },
   ];
 }
 
-function getSocialValue(platform: SocialPlatform, href: string) {
-  if (platform === "email") {
+function getSocialValue(href: string) {
+  if (href.startsWith("mailto:")) {
     return href.replace("mailto:", "");
   }
 

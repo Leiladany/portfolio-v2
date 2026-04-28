@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { NavbarMenu } from "./NavbarMenu";
 import { BrandLink } from "./BrandLink";
-import { navigationLinks } from "./navigation";
+import { navigationLinks } from "../../data/site";
 
 export function Header() {
   return (

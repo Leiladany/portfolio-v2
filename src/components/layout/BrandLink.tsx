@@ -7,9 +7,7 @@ type BrandLinkProps = {
 };
 
 export function BrandLink({ compact = false, onClick }: BrandLinkProps) {
-  const label = compact
-    ? `${profileInfo.firstName} T.`
-    : `${profileInfo.firstName} ${profileInfo.lastName}`;
+  const label = compact ? profileInfo.shortName : profileInfo.fullName;
 
   return (
     <Link to="/" className="flex shrink-0 items-center gap-2" onClick={onClick}>

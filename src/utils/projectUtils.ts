@@ -28,17 +28,19 @@ export function getProjectFocus(project: Project) {
 }
 
 export function formatProjectDateRange(project: Project) {
-  if (!project.dateEnd) {
-    return `${formatProjectMonth(project.dateStart)} - Present`;
+  const startDate = parseProjectDate(project.date.start);
+
+  if (!project.date.end) {
+    return `${formatProjectMonth(startDate)} - Present`;
   }
 
-  if (isSameProjectMonth(project.dateStart, project.dateEnd)) {
-    return formatProjectMonth(project.dateStart);
+  const endDate = parseProjectDate(project.date.end);
+
+  if (isSameProjectMonth(startDate, endDate)) {
+    return formatProjectMonth(startDate);
   }
 
-  return `${formatProjectMonth(project.dateStart)} - ${formatProjectMonth(
-    project.dateEnd,
-  )}`;
+  return `${formatProjectMonth(startDate)} - ${formatProjectMonth(endDate)}`;
 }
 
 export function getNextProject(
@@ -62,6 +64,10 @@ export function getSafeReturnPath(value: unknown) {
 
 function formatProjectMonth(date: Date) {
   return `${monthLabels[date.getUTCMonth()]} ${date.getUTCFullYear()}`;
+}
+
+function parseProjectDate(value: string) {
+  return new Date(value);
 }
 
 function isSameProjectMonth(firstDate: Date, secondDate: Date) {

@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { AnimatedArrow } from "../common/AnimatedArrow";
+import { projectDetailContent } from "../../data/site";
 import type { Project } from "../../data/types";
 
 type NextProjectLinkProps = {
@@ -17,7 +18,9 @@ export function NextProjectLink({ project, returnTo }: NextProjectLinkProps) {
             state={{ returnTo }}
             className="group reveal flex items-center justify-between gap-4 text-sm"
           >
-            <span className="text-graphite">Next project</span>
+            <span className="text-graphite">
+              {projectDetailContent.nextProjectLabel}
+            </span>
             <span className="link-underline text-charcoal inline-flex items-center gap-2 font-medium transition-colors duration-300">
               <span>{project.title}</span>
               <AnimatedArrow className="h-3.5 w-3.5" />

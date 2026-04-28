@@ -2,6 +2,7 @@ import { Code2 } from "lucide-react";
 import { Link } from "react-router-dom";
 import { AnimatedArrow } from "../common/AnimatedArrow";
 import { PageIntro } from "../common/PageIntro";
+import { projectDetailContent } from "../../data/site";
 import type { Project } from "../../data/types";
 import { formatProjectDateRange } from "../../utils/projectUtils";
 
@@ -24,7 +25,7 @@ export function ProjectDetailHero({
           className="link-underline text-graphite inline-flex items-center gap-2 text-sm transition-colors duration-300"
         >
           <AnimatedArrow direction="left" className="h-4 w-4" />
-          <span>Back</span>
+          <span>{projectDetailContent.backLabel}</span>
         </Link>
       }
       title={
@@ -45,7 +46,7 @@ export function ProjectDetailHero({
               rel="noreferrer"
               className="pill pill-rose"
             >
-              Live demo{" "}
+              {projectDetailContent.liveDemoLabel}{" "}
               <AnimatedArrow direction="external" className="h-4 w-4" />
             </a>
           ) : null}
@@ -56,7 +57,8 @@ export function ProjectDetailHero({
               rel="noreferrer"
               className="pill pill-ghost"
             >
-              <Code2 className="h-4 w-4" /> Repository
+              <Code2 className="h-4 w-4" />{" "}
+              {projectDetailContent.repositoryLabel}
             </a>
           ) : null}
         </>

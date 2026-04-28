@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { AnimatedArrow } from "../common/AnimatedArrow";
+import { projectsPageContent } from "../../data/site";
 import type { Project } from "../../data/types";
 
 type ProjectCardProps = {
@@ -18,7 +19,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       className="project-card group reveal flex flex-col"
       data-delay={index * 80}
     >
-      <div className="bg-blush-soft m-4 aspect-[4/3] overflow-hidden rounded-[1.5rem]">
+      <div className="bg-blush-soft m-4 aspect-4/3 overflow-hidden rounded-3xl">
         <img
           src={image.src}
           alt={image.alt}
@@ -39,7 +40,7 @@ export function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         </div>
         <div className="mt-auto flex items-center justify-between pt-4">
           <span className="text-charcoal text-sm font-medium">
-            View project
+            {projectsPageContent.cardActionLabel}
           </span>
           <span className="bg-blush text-rose-deep flex h-10 w-10 items-center justify-center rounded-full">
             <AnimatedArrow className="h-4 w-4" />

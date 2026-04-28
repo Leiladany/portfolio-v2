@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { SiteLayout } from "../components/layout/SiteLayout";
+import { notFoundContent } from "../data/site";
 
 type NotFoundPageProps = {
   eyebrow?: string;
@@ -8,9 +9,9 @@ type NotFoundPageProps = {
 };
 
 export function NotFoundPage({
-  eyebrow = "404",
-  title = "Page not found",
-  description = "The page you are looking for does not exist or has been moved.",
+  eyebrow = notFoundContent.page.eyebrow,
+  title = notFoundContent.page.title,
+  description = notFoundContent.page.description,
 }: NotFoundPageProps) {
   return (
     <SiteLayout>
@@ -21,7 +22,7 @@ export function NotFoundPage({
         </h1>
         <p className="text-graphite mx-auto max-w-md">{description}</p>
         <Link to="/" className="pill pill-primary mt-8">
-          Go home
+          {notFoundContent.homeLinkLabel}
         </Link>
       </div>
     </SiteLayout>

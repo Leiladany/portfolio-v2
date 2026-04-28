@@ -6,6 +6,7 @@ import { ProjectStoryList } from "../components/project-detail/ProjectStoryList"
 import { ProjectSummaryGrid } from "../components/project-detail/ProjectSummaryGrid";
 import { SiteLayout } from "../components/layout/SiteLayout";
 import { getProjectById, projects } from "../data/projects";
+import { notFoundContent } from "../data/site";
 import {
   getNextProject,
   getProjectFocus,
@@ -27,8 +28,8 @@ export function ProjectDetailPage() {
   if (!project) {
     return (
       <NotFoundPage
-        title="Project not found"
-        description="The selected project could not be found."
+        title={notFoundContent.project.title}
+        description={notFoundContent.project.description}
       />
     );
   }

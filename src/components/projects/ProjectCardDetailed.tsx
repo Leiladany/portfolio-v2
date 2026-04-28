@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { AnimatedArrow } from "../common/AnimatedArrow";
+import { projectsPageContent } from "../../data/site";
 import type { Project } from "../../data/types";
 import {
   formatProjectDateRange,
@@ -26,7 +27,7 @@ export function ProjectCardDetailed({
       className="project-card-detailed group reveal flex flex-col"
       data-delay={index * 80}
     >
-      <div className="bg-blush-soft m-5 aspect-[16/10] overflow-hidden rounded-[1.5rem]">
+      <div className="bg-blush-soft m-5 aspect-16/10 overflow-hidden rounded-3xl">
         <img
           src={image.src}
           alt={image.alt}
@@ -38,13 +39,9 @@ export function ProjectCardDetailed({
       </div>
 
       <div className="flex flex-1 flex-col gap-5 px-6 pt-2 pb-7 sm:px-8 sm:pb-8">
-        <div className="flex items-center gap-3 text-xs">
-          <span className="text-rose-deep font-semibold uppercase">
-            {getProjectType(project)}
-          </span>
-          <span className="text-graphite">&middot;</span>
-          <span className="text-graphite">{projectDate}</span>
-        </div>
+        <span className="text-rose-deep font-semibold uppercase">
+          {getProjectType(project)}
+        </span>
 
         <div>
           <h3 className="font-display text-charcoal mb-3 text-2xl transition-colors duration-300 sm:text-3xl">
@@ -65,7 +62,7 @@ export function ProjectCardDetailed({
 
         <div className="border-blush-soft mt-auto flex items-center justify-between border-t pt-5">
           <span className="text-charcoal text-[15px] font-medium">
-            View project
+            {projectsPageContent.cardActionLabel}
           </span>
           <span className="bg-blush text-rose-deep inline-flex h-11 w-11 items-center justify-center rounded-full">
             <AnimatedArrow className="h-4 w-4" />

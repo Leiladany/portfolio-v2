@@ -3,13 +3,17 @@ import { Link } from "react-router-dom";
 import { AnimatedArrow } from "../common/AnimatedArrow";
 import { PageIntro } from "../common/PageIntro";
 import { profileInfo } from "../../data/profile";
+import { homePageContent } from "../../data/site";
 
 export function HomeHero() {
+  const { hero } = homePageContent;
+
   return (
     <PageIntro
       title={
         <>
-          Hi, I'm <span className="text-rose">{profileInfo.fullName}</span>
+          {hero.greeting}{" "}
+          <span className="text-rose">{profileInfo.fullName}</span>
           <span className="text-rose">.</span>
         </>
       }
@@ -31,12 +35,12 @@ export function HomeHero() {
       description={profileInfo.intro}
       actions={
         <>
-          <Link to="/projects" className="pill pill-primary">
-            View Projects
+          <Link to={hero.primaryAction.to} className="pill pill-primary">
+            {hero.primaryAction.label}
             <AnimatedArrow className="h-4 w-4" />
           </Link>
-          <Link to="/contact" className="pill pill-ghost">
-            Contact Me
+          <Link to={hero.secondaryAction.to} className="pill pill-ghost">
+            {hero.secondaryAction.label}
           </Link>
         </>
       }

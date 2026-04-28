@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { NavLink } from "react-router-dom";
 import { BrandLink } from "./BrandLink";
-import type { NavigationLink } from "./navigation";
+import type { NavigationLink } from "../../data/types";
 
 type NavbarMenuProps = {
   links: readonly NavigationLink[];

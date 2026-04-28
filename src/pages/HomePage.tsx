@@ -4,9 +4,13 @@ import { FeaturedProjectsSection } from "../components/home/FeaturedProjectsSect
 import { HomeHero } from "../components/home/HomeHero";
 import { ToolboxPreviewSection } from "../components/home/ToolboxPreviewSection";
 import { projects } from "../data/projects";
+import { homePageContent } from "../data/site";
 
 export function HomePage() {
-  const featuredProjects = projects.slice(0, 3);
+  const featuredProjects = projects.slice(
+    0,
+    homePageContent.featuredProjects.limit,
+  );
 
   return (
     <SiteLayout>

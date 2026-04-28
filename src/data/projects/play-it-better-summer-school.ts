@@ -11,7 +11,7 @@ export const playItBetterSummerSchool: Project = {
   },
   images: [
     {
-      src: "/projects/playitbetter/playitbetter-1.png",
+      src: "/projects/playitbetter/playitbetter-0.png",
       alt: "Landing page preview of Play It Better: Summer School.",
     },
   ],

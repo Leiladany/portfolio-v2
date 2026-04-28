@@ -11,7 +11,7 @@ export const empowered: Project = {
   },
   images: [
     {
-      src: "/projects/empowered/empowered-1.png",
+      src: "/projects/empowered/empowered-0.png",
       alt: "Homepage preview of the Empowered platform.",
     },
   ],

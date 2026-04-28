@@ -11,7 +11,7 @@ export const escapingWestview: Project = {
   },
   images: [
     {
-      src: "/projects/westview/westview-1.png",
+      src: "/projects/westview/westview-0.png",
       alt: "Gameplay screenshot from the Escaping Westview browser game.",
     },
   ],

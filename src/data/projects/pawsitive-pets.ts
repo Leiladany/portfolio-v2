@@ -11,7 +11,7 @@ export const pawsitivePets: Project = {
   },
   images: [
     {
-      src: "/projects/pawsitive/pawsitive-1.png",
+      src: "/projects/pawsitive/pawsitive-0.png",
       alt: "Dashboard preview of the Pawsitive Pets web app.",
     },
   ],

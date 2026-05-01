@@ -198,10 +198,6 @@ export type ContactPageContent = {
   intro: PageIntroContent;
 };
 
-export type FooterContent = {
-  credit: string;
-};
-
 export type NotFoundMessage = {
   eyebrow?: string;
   title: string;

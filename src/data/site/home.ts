@@ -4,11 +4,11 @@ export const homePageContent: HomePageContent = {
   hero: {
     greeting: "Hi, I'm",
     primaryAction: {
-      label: "View Projects",
+      label: "View projects",
       to: "/projects",
     },
     secondaryAction: {
-      label: "Contact Me",
+      label: "Contact me",
       to: "/contact",
     },
   },
